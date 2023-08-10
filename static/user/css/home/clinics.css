@@ -1,0 +1,164 @@
+:root {
+    --body-color: rgb(242, 242, 242);
+    --font-color: rgb(0, 0, 0);
+    --shadow-color-1: rgb(190, 190, 190);
+    --shadow-color-2: rgb(255, 255, 255);
+    --background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* common class */
+.Container {
+    width: 75%;
+    margin: 5% auto;
+    border-radius: 0.5em;
+    background: var(--shadow-color-2);
+    padding: 2em;
+}
+
+.shadowBox {
+    box-shadow: 1.25em 1.25em 3.75em var(--shadow-color-1),
+        -1.25em -1.25em 3.75em var(--shadow-color-2);
+}
+
+/* == */
+.clinics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.textHeader {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.clinicsText p {
+    font-size: 1.3em;
+}
+
+/* button  */
+.btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5em 0.8em;
+    border-radius: 0.5em;
+    background: var(--font-color);
+    color: var(--shadow-color-2);
+    transition: 0.3s ease;
+}
+
+.bk-Btn {
+    display: block;
+    width: 90%;
+    margin: 2em auto;
+    font-size: 0.9em;
+}
+
+
+.btn:hover {
+    background: var(--shadow-color-2);
+    color: var(--font-color);
+    font-weight: 600;
+    border: 1px solid var(--font-color);
+}
+
+/* line  */
+
+hr {
+    width: 100%;
+    height: 0.3em;
+    background: linear-gradient(to bottom right, var(--body-color), var(--font-color));
+    border-radius: 1em;
+    margin-top: 0.5em;
+}
+
+/* card  */
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardBox {
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+    width: 30%;
+    margin-top: 1.2em;
+}
+
+.cardBox:hover {
+    transform: scale(1.05);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.card-content {
+    padding: 0.8em;
+    line-height: 1.9em;
+}
+
+.card-content p a {
+    text-decoration: none;
+}
+
+.cardImage img {
+    width: 100%;
+    height: auto;
+}
+
+/* Doctor  */
+.ctn-doctor {
+    width: 80%;
+    margin: 3% auto;
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.ctn-doctor div {
+    border: 1px solid black;
+    border-radius: 9px;
+    padding: 4px;
+    background-color: #ffffffde;
+}
+
+.ctn-doctor span:first-child {
+    display: block;
+    font-size: 13px;
+}
+
+.ctn-doctor .doc-spec {
+    font-size: 12px;
+}
+
+
+/* responsive */
+
+@media (max-width: 960px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .cardBox {
+        width: 100%;
+        margin-bottom: 2em;
+        border-radius: 0.5em;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .clinicContain {
+        width: 80%;
+        padding: 1em;
+    }
+
+    .clinicsText p {
+        font-size: 1em;
+    }
+}

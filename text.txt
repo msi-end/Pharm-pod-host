@@ -1,0 +1,2 @@
+SELECT client_Info.c_id, client_Info.c_name, rr_data.review, rr_data.userName FROM client_Info INNER JOIN rr_data ON rr_data.c_id = client_Info.c_id 
+            WHERE client_Info.c_id ='${req.params.id}'

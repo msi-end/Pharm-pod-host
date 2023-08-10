@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin -Main</title>
+    <link rel="stylesheet" href="/icons/iconsRoot.css" />
+    <link rel="stylesheet" href="/admin/css/css.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+<!-- ///// nav  -->
+<%- include('./partials/header.ejs') %>
+<!-- Mdl and flashMsg -->
+        <div id="mdl_bx">
+            <div id="mdl_body" style="margin: auto;"></div>
+            <div id="btnCotn">
+                <button type="button" id="btnSave" class="cgreen hover">Save </button>
+                <button onclick="userAction.modelBox_Cls()" class="cred hover "> Cancel</button>
+            </div></div>
+        <div id="flashMsg"><p id="text"></p></div>
+
+<!-- ////Main Content -->
+<main id="mainContent">
+        <div class="admin-search-tool">
+            <input type="text" id="adminsearch" placeholder="Search by number" onkeyup="filter_fun('adminsearch', 'psnum' )">
+        </div>
+            <% if(ps_data.length>0){ %>
+                <% ps_data.forEach(function(data){ %>
+        <div class="psInfo item_done" clientId='<%= data.id %>''  id="divpa">
+            <div class="psNum">
+                <span class="uil uil-user-square"></span>
+                <br><span>No:</span> 
+                <span><%= data.id %></span> 
+            </div>
+            <div class="psDetail">
+                <h4 class="psName"><%= data.p_name %></h4>
+                <p class="psOtherInf psnum"><%= data.p_number %></p>
+                <p class="psDoctor"><%= data.p_doctor %></p>
+                <p class="psDoctor"><%= data.p_aptDate %></p>
+                <p class="psDoctor"><%= data.p_OthInfo %></p>
+            </div>
+            <div class="psAction"> 
+                <a onclick="userAction.done(this)" class="done hover">
+                    <span class="uil uil-check"></span>
+                    <br>Done</a>
+                <a onclick="userAction.del(this)" class="del hover">
+                    <span class="uil uil-trash-alt"></span><br>Delete</a>
+            </div>
+        </div>
+   <% }) %>
+<% } else { %>
+     <h2 data-val="nl" class="efont"> No Data Available !!!</h2> 
+      <% } %> 
+</main>
+<div class="addPS">
+    <span onclick="Opn_addPS(this)" > + </span>
+    <div class="addPS_ctn">
+    <p>Patient Name:</p>
+    <input type='text' name="PName" minlength="6" maxlength="50" placeholder='Patient Name' required>
+    <p>Patient Number :</p>
+    <input type='number' name="PNum"  min='999999999' max="9999999999" placeholder='9876543210' required>
+    <p>Additional Info :</p>
+    <input type='text' name="PInfo" placeholder='Additional Info' required>
+    <p>Select Doctor :</p>
+    <select name="PDoc" id='psDoctor' required>
+        <% if(doc){ %>
+            <% doc.forEach(function(e){ %>
+        <option value='<%= e.d_name %>'>Dr. <%= e.d_name %></option>
+        <% }) %>
+        <% } %> 
+    </select>
+    <p>Select Appointment Date :</p>
+    <input type="date" data-min="0" data-max="1" value name="date" id="formDate">
+    <br>
+    <button type="button" onclick="userReq.AddPs(this)" class="cgreen hover">Save </button>
+    <button onclick="Cls_addPS(this)" class="cred hover "> Cancel</button>
+</div>
+</div>
+<br><br><br><br>
+<div id="panel">
+ <div class="panelInfo">
+    <input type="text" id="datesearch" placeholder="Search by ID OR Name" onkeyup="filter_fun('datesearch', 'ps-num')">
+    <span id="cross" onclick="userAction.panel_cls()">X</span>
+</div>
+<div class="marchgin"></div>
+</div>
+    <!-- ////Bottom Manu -->
+<%- include('./partials/footer.ejs') %>
+
+<script src="/admin/js/script.js"></script>
+
+<script>
+</script>
+</body>
+
+</html>

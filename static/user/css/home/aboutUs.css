@@ -1,0 +1,65 @@
+:root{
+    --body-color : rgb(242, 242, 242);
+    --font-color: rgb(0, 0, 0);
+    --shadow-color-1: rgb(190, 190, 190);
+    --shadow-color-2: rgb(255, 255, 255);
+    --background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.aboutContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100%; */
+}
+
+.aboutContent img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.aboutContent img:hover{
+    transform: scale(1.05);
+}
+
+.aboutText{
+    padding: 0 3em;
+    line-height: 1.9em;
+}
+
+.aboutHeader{
+    display: inline-block;
+}
+
+.lrn-btn{
+    margin-top: 1em;
+}
+
+/* responsive */
+
+@media (max-width: 960px){
+    .aboutContent{
+        flex-direction: column;
+    }
+
+    .aboutText{
+        padding: 2em 0 1em 0;
+    }
+}
+
+
+/* page  */
+
+
+.aboutPage-img{
+    width: 100%;
+    margin: 2% auto;
+}
+
+.aboutPage-img img{
+    width: 100%;
+}

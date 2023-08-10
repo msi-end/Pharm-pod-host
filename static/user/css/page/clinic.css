@@ -1,0 +1,74 @@
+:root{
+    --body-color : rgb(242, 242, 242);
+    --font-color: rgb(0, 0, 0);
+    --shadow-color-1: rgb(190, 190, 190);
+    --shadow-color-2: rgb(255, 255, 255);
+    --background-color: rgba(0, 0, 0, 0.05);
+}
+
+.gridBox{
+    margin: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 20em);
+    justify-content: center;
+    column-gap: 2em;
+    row-gap: 2em;
+}
+
+.grid-item{
+    background: var(--shadow-color-2);
+    border-radius: 1em;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.grid-item:hover{
+    transform: scale(1.05);
+}
+.grid-item a{
+    text-decoration: none;
+}
+.grid-img{
+    overflow: hidden;
+    border-radius: 1em 1em 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 12em;
+    padding: 0 1em 1em 1em;
+    justify-content: flex-end;
+    color: var(--shadow-color-2);
+}
+
+
+.grid-img-content, .grid-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid-img-content p, .grid-img-content span{
+    font-size: 0.8em;
+}
+
+.grid-img-content span{
+    background: rgb(0, 153, 255);
+    border-radius: 5px;
+    padding: 0 0.3em;
+}
+.grid-content{
+    padding: 1em;
+    font-size: 0.8em;
+    color: var(--font-color);
+}
+
+/* Images */
+.img-1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.7)), url('/img/doctor/cover-img/cover-img-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+}

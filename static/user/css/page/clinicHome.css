@@ -1,0 +1,54 @@
+:root{
+    --body-color : rgb(242, 242, 242);
+    --font-color: rgb(0, 0, 0);
+    --shadow-color-1: rgb(190, 190, 190);
+    --shadow-color-2: rgb(255, 255, 255);
+    --background-color: rgba(0, 0, 0, 0.05);
+}
+
+.mainPage{
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0 , 0, 0.7)), 
+    url('/img/clinic/medical.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 2.5em;
+}
+
+
+.pageContent{
+    color: var(--shadow-color-2);
+}
+
+.pageContent h1{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.pageContent p{
+    font-size: 1.1em;
+}
+.pageBtn{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.pagebtn{
+    padding: 0.3em 0.7em;
+    border: none;
+    outline: none;
+    border-radius: 0.5em;
+    font-size: 1em;
+    background-color: var(--font-color);
+    color: var(--shadow-color-2);
+    cursor: pointer;
+}
+
+.uil-calling{
+    color: var(--shadow-color-2);
+}

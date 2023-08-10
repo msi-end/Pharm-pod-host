@@ -1,0 +1,806 @@
+@import './anim.css';
+
+:root {
+    --p-color: rgb(0, 0, 0);
+    --p2-color: rgb(17, 195, 255);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background: rgb(242, 242, 242);
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.symbols-rounded {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 700,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+/* ///// nav  */
+#NavCtn {
+    box-shadow: 1px 1px 10px black;
+    color: white;
+    width: 100%;
+    transition: all .3s ease-in;
+    margin-bottom: 28%;
+}
+
+.NavCtn-n {
+    padding: 10px;
+    z-index: 50;
+    position: fixed;
+    top: 0;
+    background: black;
+    width: 95%;
+    display: none;
+}
+
+#NavCtn a {
+    margin: 5px;
+    cursor: pointer;
+}
+
+#NavCtn-n1 {
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.NavCtn-n1-Opn {
+    display: block;
+}
+
+#NavCtn-n1 a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#NavCtn-n1 a span {
+    width: 80%;
+    background-color: var(--p2-color);
+    color: white;
+    text-align: center;
+    font-weight: 600;
+}
+
+#NavCtn-n1 a span:first-child {
+    border-radius: 7px 7px 0px 0px;
+    padding: 10px 5px 0px 5px;
+}
+
+#NavCtn-n1 a span:last-child {
+    border-radius: 0px 0px 7px 7px;
+    padding: 0px 5px 10px 5px;
+
+}
+
+#NavCtn-n1 #val1 {
+    margin: 5px;
+    display: block;
+}
+
+.NavCtn-n2 {
+    padding: 10px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 95%;
+    background: black;
+    z-index: 10;
+}
+
+.NavCtn-n2::after {
+    content: '';
+    margin-bottom: 30px;
+}
+
+#NavCtn input[type="date"] {
+    border: none;
+    outline: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#NavCtn .download_btn-tl {
+    font-size: 16px;
+    margin: 10px;
+}
+
+#NavCtn .download_btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: var(--p2-color);
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: 0px 2px 5px #93c9e1;
+}
+
+#NavCtn .booking_btn-tl {
+    display: inline-block;
+    /* width: 80px; */
+    position: relative;
+    top: -3px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+#toggalOpt {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--p2-color);
+    position: relative;
+    border-radius: 10px;
+    bottom: -44px;
+    right: -4%;
+    /* border-bottom: 2px solid white; */
+    box-shadow: 0px 2px 5px #93c9e1;
+}
+
+#NavCtn::after {
+    content: '';
+    display: block;
+    margin: 8px;
+}
+
+/* ///// navBottom  */
+.addPS {
+    background-color: var(--p2-color);
+    color: white;
+    font-size: 45px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    position: fixed;
+    bottom: 70px;
+    right: 5px;
+    z-index: 16;
+}
+
+.addPS .addPS_ctn {
+    display: none;
+}
+
+#bottomNav {
+    padding: 3px;
+    background-color: var(--p-color);
+    height: 55px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 14px;
+    z-index: 17;
+}
+
+#bottomNav a {
+    display: flex;
+    width: 30%;
+    text-align: center;
+    cursor: pointer;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+#bottomNav a[action] {
+    background-color: #fff;
+    border-radius: 13px;
+    transition: all .5s;
+    color: var(--p2-color);
+}
+
+.switch {
+    float: right;
+}
+
+/* ///////////Main ////////// */
+#mainContent .psInfo {
+    width: 90%;
+    margin: 20px auto;
+    background: whitesmoke;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#mainContent .psInfo::before {
+    content: '';
+}
+
+#mainContent .psNum {
+    background: var(--p2-color);
+    border-radius: 6px;
+    padding: 2.5rem 3rem;
+    text-align: center;
+}
+
+#mainContent .psNum .uil {
+    font-size: 25px;
+}
+
+#mainContent .psDetail {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+    /* letter-spacing: 1px; */
+}
+
+#mainContent .psAction {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+}
+
+#mainContent .psAction a {
+    text-align: center;
+    font-size: 13px;
+    background-color: #ebebeb8f;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
+    /* padding: 5px 12px; */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 4px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+#mainContent .psAction .uil {
+    font-size: 25px;
+}
+
+#mainContent .psAction a:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.done {
+    color: green;
+}
+
+.del {
+    color: red;
+}
+
+#mainContent .itm_done {
+    background: rgb(204, 204, 204);
+}
+
+/* ////Plus Icon /// */
+.addPSpan {
+    display: block;
+    background-color: var(--p-color);
+    color: rgba(255, 255, 255, 0);
+    font-size: 39px;
+    width: 95%;
+    height: fit-content;
+    padding: 10px;
+    text-align: center;
+    border-radius: 13px;
+    position: fixed;
+    bottom: 70px;
+    margin: auto;
+    transition: all .4s;
+}
+
+.addPSpan .addPS_ctn {
+    display: block;
+    margin-top: 20px;
+}
+
+.addPSpan p {
+    width: 80%;
+    margin: 10px auto 0px auto;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+}
+
+.addPSpan :is(input, select) {
+    width: 80%;
+    margin: auto;
+    height: 35px;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.addPSpan button,
+#mdl_bx button {
+    width: 45%;
+    height: 45px;
+    border-radius: 7px;
+    padding: 5px;
+    border: none;
+    font-size: 18px;
+    color: white;
+    margin-top: 40px;
+    background-color: var(--p2-color);
+}
+
+.addPSpan span {
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    border-radius: 50%;
+    border: 2px solid white;
+    font-size: 22px;
+    color: white;
+    float: right;
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+
+.cgreen {
+    background: rgb(73, 196, 7);
+    box-shadow: 1px 2px 6px 0.1px #08a32e;
+    /* background: linear-gradient(0deg, rgba(91, 241, 8, 1) 0%, rgba(6, 182, 17, 1) 65%); */
+    /* background: linear-gradient(0deg, rgb(72 74 71) 0%, rgb(52 52 52) 65%); */
+
+}
+
+.cred {
+    background: rgb(241, 106, 8);
+    box-shadow: 1px 2px 6px 0.1px #e2480c;
+    /* background: linear-gradient(0deg, rgba(241, 106, 8, 1) 0%, rgba(242, 11, 11, 1) 49%); */
+    /* background: linear-gradient(0deg, rgb(42 42 42) 0%, rgb(0 0 0 / 63%) 84%); */
+}
+
+/* <!-- Mdl and flashMsg --> */
+#mdl_bx {
+    display: none;
+    position: fixed;
+    top: 20vh;
+    width: 92.5%;
+    height: fit-content;
+    border-radius: 13px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+    box-shadow: 0px 1px 5px #00000057;
+    border: 1px solid var(--p-color);
+}
+#mdl_body {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+#mdl_body p {
+    margin: 10px auto;
+    padding: 18px;
+    width: fit-content;
+    display: block;
+    background: #f3f3f3cc;
+    color: black;
+    font-size: 21px;
+    font-weight: 600;
+    border-radius: 11px;
+}
+
+#mdl_bx input[type="text"],
+#mdl_bx input[type="number"],
+#mdl_bx select {
+    /* width: 96%; */
+    margin: auto 0px 15px;
+    height: 34px;
+    border-radius: 7px;
+    padding: 5px;
+    border: 2px solid var(--p2-color);
+}
+
+#mdl_bx select {
+    height: 42px;
+}
+
+#mdl_bx button {
+    bottom: 1px;
+    width: 45%;
+}
+
+#mdl_bx button:hover {
+    font-weight: 500;
+    transition: all .4s;
+    border: 2px solid white;
+    background-color: #414141;
+}
+
+#btnCotn {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#flashMsg {
+    display: none;
+    width: 100vw;
+    color: white;
+    padding: 7px;
+    position: absolute;
+    top: 0px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 1px 10px -5px black;
+    background-color: var(--p2-color);
+    z-index: 20;
+}
+
+h2[data-val="nl"] {
+    text-align: center;
+    color: rgb(183, 213, 240);
+}
+
+#cout {
+    position: absolute;
+    top: 5px;
+    left: 21%;
+    color: #ffffff;
+    font-weight: 600;
+    margin-left: 6px;
+    background: red;
+    border-radius: 50%;
+    /* padding: 4px; */
+    font-size: 14px;
+}
+
+#log-Container {
+    width: 90%;
+    margin: auto;
+    height: 70px;
+    margin-top: 10px;
+    font-weight: 800;
+    background-color: #b0c0f5;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    box-shadow: 1px 1px 10px rgb(194, 194, 194);
+}
+
+.efont {
+    font-family: 'Ysabeau', sans-serif;
+}
+
+#panel {
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 95vh;
+    overflow-y: scroll;
+    z-index: 14;
+    background: rgb(153, 214, 255);
+    position: absolute;
+    top: 0;
+}
+
+#panel :is(.panelInfo, .patientInfo) {
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#panel .panelInfo {
+    margin-bottom: 3.5rem;
+}
+
+#panel .panelInfo input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.panelInfo :is(input, a, span):hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#panel #cross {
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    background: whitesmoke;
+    padding: 8px 14px;
+    position: absolute;
+    top: -40px;
+    right: 0;
+}
+
+#panel .panelInfo a {
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    background: whitesmoke;
+    padding: 8px 14px;
+    color: black;
+    position: absolute;
+    top: 52px;
+    left: 0;
+}
+
+#panel .patientInfo {
+    background: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    gap: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin-top: 1rem;
+}
+
+.psDetail * {
+    margin: 13px 0px;
+}
+
+#panel .patientInfo .psNum {
+    background: var(--p2-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* gap: 8px; */
+    padding: 2.5rem 1rem;
+    border-radius: 5px;
+
+}
+
+.patientInfo .psNum .uil {
+    font-size: 25px;
+}
+
+#panel .patientInfo .psDetail {
+    line-height: 5px;
+}
+
+#panel #numb {
+    font-size: 17px;
+}
+
+/* Search bar and download */
+.admin-search-tool {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.admin-search-tool input {
+    width: 93%;
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.admin-search-tool input:is(:hover, :focus) {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.admin-search-tool a {
+    text-align: center;
+    width: 20%;
+    font-size: 12px;
+    border-radius: 5px;
+    background: var(--p-color);
+    padding: 14px;
+    color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.admin-search-tool a:hover {
+    background: gray;
+}
+
+@media screen and (max-width: 960px) {
+    #mainContent .psNum {
+        padding: 1.5rem 1rem;
+    }
+
+    #mainContent .psNum {
+        width: 20%;
+    }
+}
+
+
+/* ===================== Responsive ======= */
+
+@media only screen and (max-width: 767px) {}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {}
+
+/* Desktop Screens */
+@media only screen and (min-width: 1024px) {
+    .NavCtn-n {
+        display: block;
+        width: 24%;
+        margin: 20px;
+        border-radius: 15px;
+    }
+
+    .NavCtn-n2 {
+        display: none;
+    }
+
+    #toggalOpt {
+        display: none;
+    }
+
+    #mainContent {
+        width: 60%;
+        position: fixed;
+        top: 0px;
+        left: 32%;
+        background-color: white;
+        margin: 20px;
+        border-radius: 13px;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    #mainContent::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    #mainContent::-webkit-scrollbar-thumb {
+        border-radius: 7px;
+        background-color: #00c3ff;
+    }
+
+    .admin-search-tool input {
+        width: 96%;
+    }
+
+    #bottomNav::before {
+        content: 'Nav Menu:';
+        font-size: 16px;
+        font-weight: 600;
+        color: rgb(0, 195, 255);
+        font-family:math;
+        padding-left: 2%;
+        margin-bottom: 7px;
+    }
+
+    #bottomNav {
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        width: 24%;
+        margin: 22px;
+        flex-direction: column;
+        height: auto;
+        border-radius: 13px;
+        padding: 10px;
+    }
+
+    #bottomNav a {
+        display: flex;
+        width: 80%;
+        text-align: center;
+        cursor: pointer;
+        flex-direction: initial;
+        align-items: center;
+        align-self: center;
+        padding: 16px;
+    }
+
+    #bottomNav a span {
+        margin-right: 10px;
+    }
+
+    #bottomNav a:hover {
+        background-color: #3d3d3d;
+        padding-left: 30px;
+        transition: all .3s;
+        border-radius: 16px;
+    }
+
+    .addPS {
+        bottom: 35px;
+        right: 40px;
+        /* width:65%; */
+        width: 80px;
+        border-radius: 30px;
+        padding: 0px 10px;
+    }
+
+    .addPS span::before {
+        display: inline-block;
+        content: 'add';
+        font-size: 22px;
+        position: relative;
+        top: -8px;
+        left: 8px;
+    }
+
+    .addPSpan span::before {
+        display: none;
+        content: '';
+    }
+
+    .addPSpan {
+        width: 50%;
+        left: 28%;
+        padding: 10px;
+    }
+
+    #mdl_bx {
+        width: 42.5%;
+        left: 42%;
+    }
+
+    #mdl_body p {
+        padding: 23px 23px;
+        right: 70px;
+    }
+
+    #panel {
+        width: 60%;
+        position: fixed;
+        top: 0px;
+        left: 32%;
+        background-color: white;
+        margin: 20px;
+        border-radius: 13px;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    #panel input {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    #flashMsg {
+        width: 31vw;
+        top: 8px;
+        right: 20px;
+
+    }
+    #cout {
+        position: static;
+    }
+    
+
+}

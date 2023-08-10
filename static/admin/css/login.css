@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.login-container{
+    width: 90%;
+    margin: 5% auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px 25px;
+    box-sizing: border-box;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+                0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+.login-container header{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+.login-container form{
+    margin: 20px 0;
+}
+.login-container form .user{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    position: relative;
+}
+.login-container form .user label{
+    margin-bottom: 2px;
+}
+.login-container form .input{
+    width: 100%;
+    box-sizing: border-box;
+}
+.login-container form .input input{
+    height: 40px;
+    font-size: 16px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.login-container form .user i{
+    position: absolute;
+    right: 15px;
+    color: #ccc;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.login-container form .buton button{
+    margin-top: 13px;
+    height: 45px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.power{
+    text-align: center;
+}

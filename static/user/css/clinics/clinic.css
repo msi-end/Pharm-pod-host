@@ -1,0 +1,544 @@
+:root{
+    --body-color : rgb(242, 242, 242);
+    --font-color: rgb(0, 0, 0);
+    --background-color: rgb(255, 255, 255);
+    --blue: rgb(0, 153, 255);
+    --gray: rgb(128, 128, 128);
+}
+
+.gallery{
+    height: 400px;
+    width: 700px;
+    background-color: rgb(245, 175, 175)
+}
+
+.mainPage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1em;
+}
+
+.clinicInfo{
+    display: flex;
+    align-items: center;
+    width: 65%;
+}
+
+.clinicLogo img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.clinicDetails{
+    margin-left: 3em;
+    line-height: 1.85em;
+}
+
+.clinicDetails h3{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.3em;
+}
+
+.clinicName span{
+    background: var(--blue);
+    border-radius: 10px;
+    padding: 0 0.3em;
+    font-size: 0.75em;
+    color: var(--background-color);
+    /* margin-left: 1.5em; */
+    cursor: pointer;
+}
+
+.clinicName{
+    display: flex;
+    align-items: center;
+}
+
+.starRating{
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+    justify-content: space-between;
+    gap: 0.5em;
+}
+.clinicDetails p a, .clinicLocation p a{
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.clinicDetails p a:hover, .clinicLocation p a:hover{
+    color: var(--blue);
+}
+.uil-check-circle{
+    color: var(--blue);
+}
+.appointmentBtns{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.appbtn{
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5em 0.8em;
+    border-radius: 0.5em;
+    background: var(--font-color);
+    color: var(--body-color);
+    width: 45%;
+    font-size: 0.85em;
+    border: 1px solid var(--font-color);
+    transition: all 0.3s ease;
+}
+
+.appbtn:hover{
+    background: var(--background-color);
+    color: var(--font-color);
+    border: 1px solid var(--font-color);
+    font-weight: 600;
+}
+/* line  */
+#revert{
+    height: 1px;
+    background: var(--body-color);
+    display: none;
+}
+
+
+/* timings  */
+.clinicTimings{
+    display: flex;
+    flex-direction: column;  
+    width: 30%;
+}
+
+.clinicTimings p{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+.weekDays{
+    display: flex;
+    justify-content: space-between;
+}
+
+.weekDays ul li{
+    list-style: none;
+}
+
+.weekS{
+    font-weight: 600;
+}
+
+/* split sections */
+
+.splitSection{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    font-size: 1.1em;
+}
+
+.firstSplit{
+    width: 50%;
+    background: var(--background-color);
+    padding: 2em;
+    border-radius: 0.5em;
+    line-height: 1.9em;
+    height: fit-content;
+}
+
+.firstSplit-Heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.firstSplit-Heading select{
+    font-size: 0.9em;
+    padding: 0.3em;
+    border: 2px solid var(--font-color);
+    outline: none;
+    border-radius: 0.4em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.firstSplit-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin: 1em auto;
+}
+.firstSplit-img img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 1em;
+}
+
+.verify{
+    font-size: 0.7em;
+}
+
+
+.firstSplit hr, .secondSplit hr, .reviewText hr{
+    height: 1px;
+    background: var(--body-color);
+    margin-bottom: 1em;
+}
+
+.uil-award{
+    background: var(--blue);
+    border-radius: 15px;
+    padding: 0 0.3em;
+    color: var(--background-color);
+}
+.detailsText{
+    display: none;
+}
+.detailsText--show {
+    display: block;
+}
+  
+.firstSplit-details .details :is(.detailsMore-btn,.detailsLess-btn){
+    color: rgb(6, 6, 246);
+    cursor: pointer;
+}
+
+.videoContent{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    margin-top: 1em;
+}
+
+.videoContent iframe{
+    width: 50%;
+    height: 225px;
+}
+
+.videoContent-desc{
+    width: 40%;
+    line-height: 1.8em;
+}
+
+.videoContent-desc h5{
+    font-size: 1.09em;
+}
+.videoContent-desc a{
+    text-decoration: none;
+}
+/* second split  */
+
+.secondSplit{
+    width: 35%;
+    background: var(--background-color);
+    padding: 2em;
+    border-radius: 0.5em;
+    height: 100%;
+}
+
+.clinicLocation iframe{
+    width: 100%;
+    border: 0;
+    height: 250px;
+    margin: 1em auto;
+}
+
+/* gallery */
+.galleryHeading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.galleryPhotos{
+    background: var(--body-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+    overflow-x: scroll;
+    padding: 1em;
+    cursor: pointer;
+}
+.galleryPhotos img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0.6em;
+
+}
+
+.clinicalEvents{
+    margin: 1em auto;
+    position: relative;
+}
+.clinicalEvents ul{
+    display: flex;
+    gap: 1.5em;
+    align-items: center;
+}
+
+.clinicalEvents ul li{
+    list-style: none;
+}
+.clinicalEvents ul li a{
+    position: relative;
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.clinicalEvents ul li a::after{
+    content: '';
+    position: absolute;
+    background-color: var(--font-color);
+    width: 100%;
+    height: 0.1em;
+    left: 0;
+    bottom: -0.5em;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+
+.clinicalEvents ul li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.content-Events_img img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-top: 1.5em;
+    border-radius: 0.8em;
+}
+
+.clinicalEvents-Content a{
+    text-decoration: none;
+}
+
+/* reviews  */
+.reviewSplit-section{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+.reviewSplit-section hr{
+    height: 1px;
+    background: var(--body-color);
+    margin-bottom: 1%;
+
+}
+.first-reviewSplit{
+    width: 35%;
+    background: var(--background-color);
+    padding: 2em;
+    border-radius: 0.5em;
+    height: 100%;
+}
+.review-ad-section{
+    margin-top: 8%;
+}
+.review-ad-img{
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.review-ad-img img{
+    border: 1px solid var(--gray);
+    width: 100%;
+}
+.review-ad-img span{
+    border: 1px solid var(--gray);
+    font-size: 10px;
+    padding: 0 8px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    color: var(--background-color);
+}
+/* second review split  */
+.second-reviewSplit{
+    width: 50%;
+    background: var(--background-color);
+    padding: 2em;
+    border-radius: 0.5em;
+}
+.customerReview-section{
+    height: 30em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.customerReview-profile{
+    padding: 0.5em;
+}
+.reviewProfile-name{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.reviewProfile-name .uil{
+    font-size: 1.4em;
+}
+.reviewProfile-stars .uis{
+    color: var(--blue);
+}
+.reviewProfile-text p{
+    font-size: 0.9em;
+}
+#writeReview{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: var(--blue);
+    color: var(--background-color);
+    padding: 0.3em 0.8em;
+    border-radius: 0.3em;
+    transition: all 0.5s ease;
+    margin-top: 1em;
+    border: 1px solid var(--blue);
+}
+
+#writeReview:hover{
+    background: var(--background-color);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+}
+
+/* responsive */
+:root{
+    --body-color : rgb(242, 242, 242);
+    --font-color: rgb(0, 0, 0);
+    --background-color: rgb(255, 255, 255);
+    --blue: rgb(0, 153, 255);
+}
+@media(max-width: 1024px){
+    .mainPage{
+        flex-direction: column;
+    }
+    .clinicInfo{
+        width: 100%;
+    }
+    .clinicTimings{
+        width: 100%;
+    }
+    #revert{
+        margin: 2em auto;
+        display: block;
+    }
+
+    .splitSection, .reviewSplit-section{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .firstSplit, .first-reviewSplit{
+        width: 75%;
+        margin: auto;
+        margin-bottom: 3em;
+    }
+
+    .secondSplit, .second-reviewSplit{
+        width: 75%;
+        margin: auto;
+    }
+    .customerReview-section{
+        height: 20em;
+    }
+
+}
+
+@media(max-width: 800px){
+    .clinicInfo{
+        flex-direction: column;
+    }
+
+    .clinicLogo img{
+        width: 300px;
+        height: 200px;
+    }
+    .clinicDetails{
+        margin: auto;
+        margin-top: 2em;
+    }
+    
+    .appointmentBtns{
+        z-index: 1;
+        position: fixed;
+        bottom: 0px;
+        left: 0;
+        width: 91%;
+        margin: 0;
+        background:  linear-gradient(to bottom left, #a6a6a6 0%, #f2f2f2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em;
+        border-top-right-radius: 1em;
+        border-top-left-radius: 1em;
+    }
+}
+
+@media(max-width: 572px){
+    .starRating span, .starRating p{
+        font-size: 0.8em;
+    }
+
+    .videoContent{
+        flex-direction: column;
+    }
+    .videoContent iframe, .videoContent-desc{
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+}
+
+@media (max-width:480px){
+    .clinicName{
+        flex-direction: column;
+    }
+    
+    .firstSplit-Heading{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1em;
+    }
+    .firstSplit-main{
+        flex-direction: column;
+    }
+    .firstSplit-img{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .firstSplit-Content{
+        width: 100%;
+    }
+    .clinicLocation iframe, .content-Events_img img{
+        height: 200px;
+    }
+
+}

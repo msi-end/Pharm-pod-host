@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Approval page</title>
+    <link rel="stylesheet" href="/admin/css/css.css">
+    <link rel="stylesheet" href="/icons/iconsRoot.css" />
+
+</head>
+
+<body>
+    <!-- ///// nav  -->
+    <!-- Mdl and flashMsg -->
+     <div id="mdl_bx">
+            <div id="mdl_body" style="margin: auto;"></div>
+            <div id="btnCotn">
+                <button type="button" id="btnSave" class="cgreen hover">Save </button>
+                <button onclick="userAction.modelBox_Cls()" class="cred hover "> Cancel</button>
+            </div>
+        </div>
+        <div id="flashMsg">
+            <p id="text"> </p>
+        </div>
+        <!-- ////Main Content -->
+        <main id="mainContent">
+            <% if(ps_data.length>0){ %>
+                <% ps_data.forEach(function(data){ %>
+    <div class="psInfo" clientId='<%= data.id %>''>
+      <div class="psNum">
+          <span class="symbols-rounded">clinical_notes</span>
+          <br><span>No:</span> 
+          <span><%= data.id %></span> 
+      </div>
+      <div class="psDetail">
+          <h4 class="psName"><%= data.p_name %></h4>
+          <p class="psOtherInf"><%= data.p_number %></p>
+          <p class="psDoctor"><%= data.p_doctor %></p>
+          <p class="psDoctor"><%= data.p_OthInfo %></p>
+      </div>
+      <div class="psAction"> 
+          <a onclick="userReq.Acpt(this)" class="done hover"><span
+                  class="symbols-rounded">done</span>Accept</a>
+          <a onclick="userReq.rejt(this)" class="del hover"><span
+                  class="symbols-rounded">delete</span><br>Reject</a>
+      </div>
+  </div>
+   <% }) %>
+<% } else { %>
+     <h2 data-val="nl" class="efont"> No Data Available !!!</h2> 
+      <% } %> 
+</main>
+
+<br><br><br><br>
+
+
+
+<!-- ////Bottom Manu -->
+<footer>
+    <nav id="bottomNav">
+        <a  data-n="ApplyRequest" ><span class="symbols-rounded">mark_email_read</span>Apply request</a>
+        <a  data-n="" action><span class="symbols-rounded">home</span>Home </a>
+        <a  data-n="settings"><span class="symbols-rounded">settings</span>Settings</a>
+    </nav>
+</footer>
+
+<script src="/admin/js/script.js"></script>
+
+</body>
+
+</html>

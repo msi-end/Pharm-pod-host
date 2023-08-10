@@ -1,0 +1,15 @@
+:root{
+    --body-color : rgb(242, 242, 242);
+    --font-color: rgb(0, 0, 0);
+    --background-color: rgb(255, 255, 255);
+    --blue: rgb(0, 153, 255);
+}
+
+.privacyPolicy{
+    padding: 2em;
+}
+.privacyPolicy hr{
+    height: 1px;
+    background: var(--body-color);
+    margin-bottom: 1em;
+}

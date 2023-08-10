@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Settings</title>
+    <link rel="stylesheet" href="/admin/css/css.css">
+    <link rel="stylesheet" href="/icons/iconsRoot.css" />
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ysabeau:wght@300&display=swap');
+</style>
+<body>
+    <!-- ///// nav  -->
+
+        <!-- Mdl and flashMsg -->
+        <div id="mdl_bx">
+            <div id="mdl_body" style="margin: auto;"></div>
+            <div id="btnCotn">
+                <button type="button" id="btnSave" class="cgreen hover">Save </button>
+                <button onclick="userAction.modelBox_Cls()" class="cred hover "> Cancel</button>
+            </div>
+        </div>
+        <div id="flashMsg">
+            <p id="text"> </p>
+        </div>
+        <!-- ////Main Content -->
+<main id="mainContent">
+<div id="log-Container" onclick="location.href='logOut'">
+<p class="efont">LogOut</p>
+<span class="symbols-rounded">logout</span>
+</div>
+
+
+
+
+
+
+
+
+
+</main>
+
+<!-- ////Bottom Manu -->
+<%- include('./partials/footer.ejs') %>
+
+<script src="/admin/js/script.js"></script>
+</body>
+
+</html>

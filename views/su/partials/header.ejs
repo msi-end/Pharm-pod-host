@@ -1,0 +1,26 @@
+<nav id="NavCtn">
+    <div class="NavCtn-n">
+        <div id="NavCtn-n0">
+        </div>
+        <div id="NavCtn-n1">
+            <a href="javascript:userAction.modelBox_Opn('MaxChange')" title="Increase/Decrease Apply Quantity"><span>Maximum Apply:</span><span><%= sets.maxApply %>/Day</span></a>
+            <a href="javascript:userAction.modelBox_Opn('AutoApv')"   title="Off/On Auto Approval"><span>Auto Approval:</span><span><%= sets.autoReqAppl=='true'?'On':'Off' %></span></a>
+            <a href="javascript:userAction.modelBox_Opn('ClsOpn')"   title="Off/On Submission Form"><span>Apply Form:</span><span><%= sets.form_Status=='true'?'On':'Off' %></span></a>
+        </div>
+        <h5 class="download_btn-tl" >Download Patient List</h5>
+        <a class="download_btn" href="javascript:userReq.downldsheet()">Download</a><hr>
+        <span class="booking_btn-tl">History:</span>
+        <input type="date" data-min="10" data-max="1" onchange="userReq.dtBD_(this)" value name="date" id="reqDate">
+        <span id="toggalOpt" style="right: -10%;" onclick="userAction.navCls()"><span class="symbols-rounded">cancel</span>&nbsp;Close <span class="symbols-rounded">
+            arrow_drop_up
+            </span></span>
+    </div>
+    <div class="NavCtn-n2">
+        <span class="booking_btn-tl">History:</span>
+        <input type="date" data-min="10" data-max="1" onchange="userReq.dtBD_(this)" value name="date" id="reqDate-n0">
+        <span id="toggalOpt" onclick="userAction.navOpn()"><span class="symbols-rounded">settings </span> Settings<span class="symbols-rounded">
+            arrow_drop_down
+            </span></span>
+        <span style="position: absolute;right: 28px;top: 15px;font-size: 13px;font-weight: 600;">Max Request:<br> 15/Day</span>
+    </div>
+</nav>

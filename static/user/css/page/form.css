@@ -1,0 +1,408 @@
+@import url('/admin/css/anim.css');
+:root{
+    --body-color : rgb(242, 242, 242);
+    --font-color: rgb(0, 0, 0);
+    --background-color: rgb(255, 255, 255);
+    --blue: rgb(0, 153, 255);
+}
+
+.registration-form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom right, #cccccc 0%, #808080 100%);
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    display: none;
+    
+}
+.registration-details, .reviewPopup-box, .review-form-details, .zoomPhoto{
+    padding: 2em;
+    background: var(--background-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+}
+.error{
+    display: flex;
+}
+#err-msg, .err-msg{
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+    background: #e6e6e6;
+    margin-top: 13px;
+    border-radius: 6px;
+    width: 100%;
+}
+.registration-details #closeX, .reviewPopup-box #clsX, .review-form-details #Xclse, .photo-box #pclose{
+    background: var(--font-color);
+    color: var(--background-color);
+    font-weight: 500;
+    font-size: 1.8em;
+    padding: 0 0.5em;
+    border-radius: 1em;
+    position: fixed;
+    top: -0.5em;
+    right: -0.5em;
+    cursor: pointer;
+}
+
+.registration-details .title{
+    font-size: 1.5em;
+    position: relative;
+}
+/* .registration-details .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(to bottom right, #cccccc 0%, #808080 100%);
+} */
+
+.registration-details form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form .user-details .input-box{
+    width: 100%;
+}
+
+.user-details .input-box input, .user-details .input-box select{
+    height: 3em;
+    width: 100%;
+    padding-left: 1em;
+    font-size: 1em;
+    border: 1px solid gray;
+    outline: none;
+}
+
+.user-details .input-box input:focus{
+    border-color: var(--font-color);
+}
+.input-box .details{
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+.term-details{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 1em auto;
+}
+
+.term-details input{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.term-details p{
+    font-size: 0.9em;
+}
+.term-details a{
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.form-button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-button input{
+    width: 45%;
+    margin: auto 0;
+    padding: 0.5em 0.5em;
+    font-size: 1em;
+    color: var(--background-color);
+    background: var(--font-color);
+    border-radius: 0.8em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.form-button input:hover, .review-savebtn input:hover, .review-button input:hover{
+    color: var(--font-color);
+    background: var(--background-color);
+    border: 1px solid var(--font-color);
+}
+
+
+
+
+
+/* review */
+.reviewPopup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom right, #cccccc 0%, #808080 100%);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.reviewPopup-box{
+    border-radius: 0.5em;
+    width: 50%;
+}
+.reviewPopup-box .title{
+    font-size: 1.2em;
+    text-align: center;
+} 
+
+.review-stars{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+}
+.review-details .review-stars .uis-star{
+    color: gray;
+    font-size: 3em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.review-stars input{
+    display: none;
+}
+.review-stars input:not(:checked) ~ .uis-star:hover,
+.review-stars input:not(:checked) ~ .uis-star:hover ~ .uis-star{ 
+    color: var(--blue);
+}
+.review-stars input:checked ~ .uis-star{
+    color: var(--blue);
+}
+
+.review-box{
+    width: 100%;
+}
+.review-box textarea{
+    width: 95%;
+    height: 10.5em;
+    margin: 1em auto;
+    padding: 1em;
+    font-size: 1em;
+    border: 2px solid gray;
+    outline: none;
+    resize: none;
+}
+.review-box textarea:focus{
+    border-color: var(--font-color);
+}
+.review-savebtn, .review-button{
+    width: 100%;
+    text-align: center;
+}
+.review-savebtn input{
+    width: 50%;
+    padding: 0.5em 3em;
+    font-size: 1em;
+    color: var(--background-color);
+    background: var(--font-color);
+    border-radius: 0.8em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+
+
+/* review form */
+.review-form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom right, #cccccc 0%, #808080 100%);
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+}
+
+.review-form-details{
+    border-radius: 0.5em;
+    width: 40%;
+}
+.review-input{
+    width: 100%;
+}
+.review-input input{
+    height: 2.5em;
+    width: 100%;
+    margin-bottom: 1em;
+    margin-top: 0.3em;
+    padding-left: 1em;
+    font-size: 1em;
+    border: 2px solid gray;
+    outline: none;
+}
+
+.review-input input:focus{
+    border-color: var(--font-color);
+}
+
+.review-button input{
+    padding: 0.5em 1em;
+    font-size: 1em;
+    color: var(--background-color);
+    background: var(--font-color);
+    border-radius: 0.8em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* form css */
+.hide{
+    display: none;
+}
+
+.photo-box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom right, #cccccc 0%, #808080 100%);
+    width: 100%;
+    height: 100%;
+    z-index: 35;
+}
+.zoomPhoto{
+    border-radius: 0.5em;
+    max-width: 500px;
+    width: 75%;
+    height: auto;
+    padding: 20px;
+}
+.zoomPhoto img{
+    border-radius: 10px;
+    width: 100%;
+    max-height: 350px;
+    height: 100%;
+}
+
+/* ///// Model Msg  */
+#msg_bx {
+    display: none;
+    width: 100%;
+    background-color: #ffffff00;
+    position: fixed;
+    top: 20%;
+}
+#msg_Ctn {
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    padding: 30px;
+    border-radius: 13px;
+    z-index: 50;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.692);
+}
+#msg_Ctn #icon {
+    width: 20%;
+    height: 10vh;
+    border-radius: 50%;
+}
+#msg_Ctn .uil-exclamation-triangle::before ,#msg_Ctn .uil-check-circle::before {
+    font-size: 60px;
+    vertical-align: middle;
+    color: white;
+}
+#msg_Ctn #msg_k790 {
+    display: inline-block;
+    width: 80%;
+}
+
+/* Sms Confirmation box  */
+.alertBox{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    z-index: 100;
+}
+.alertContainer{
+    transform: translate(-50%, -50%);
+    text-align: center;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    line-height: 1.9em;
+    width: 400px;
+    height: 335px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: var(--background-color);
+}
+.alertContainer h2{
+    font-size: 1.9rem;
+}
+.alertContainer span{
+    font-size: 5.5em;
+}
+.alert{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 5px 0 0;
+}
+.alert .uil{
+    color: rgb(255, 255, 255);
+}
+.Correct{
+    background: rgb(0, 204, 68);
+}
+.Wrong{
+    background: rgb(255, 0, 0);
+}
+.alertText{
+    padding: 16px 20px;
+}
+.alertText p{
+    font-size: 1.1rem;
+}
+#smsConfirm{
+    border: none;
+    outline: none;
+    color: rgb(255 255 255);
+    padding: 4px 24px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+/* responsive  */
+
+@media (max-width:480px){
+    #msg_Ctn {width: 80%;}
+    .alertContainer{
+        width: 90%;
+    }
+}
+
+@media(max-width: 572px){
+    .registration-form{
+        width: 100%;
+    }
+    .registration-details,.reviewPopup-box, .review-form-details{
+        width: 75%;
+    }
+    .review-box textarea{
+        width: 90%;
+    }
+}

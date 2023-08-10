@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Andika', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+:root{
+    --body-color : rgb(242, 242, 242);
+    --font-color: rgb(0, 0, 0);
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --shadow-color-1: rgb(190, 190, 190);
+    --shadow-color-2: rgb(255, 255, 255);
+}
+body{
+    background: var(--body-color);
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--shadow-color-2);
+    box-shadow: 0 1em 1.1em var(--shadow-color);
+    box-sizing: border-box;
+    height: 5.5em;
+}
+.logo{
+    font-size: 1.4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    color: rgb(13, 13, 13);
+    background-color: var(--shadow-color-2);
+}
+.nav-list li{
+    list-style: none;
+}
+.nav-list li a{
+    font-size: 1.1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--font-color);
+    position: relative;
+}
+.nav-list li a::before{
+    content: '';
+    position: absolute;
+    background-color: var(--font-color);
+    width: 100%;
+    height: 0.2em;
+    left: 0;
+    bottom: -0.5em;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+.nav-list li a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.mobile-nav-icon{
+    font-size: 2em;
+    cursor: pointer;
+    display: none;
+}
+#navCheck{
+    display: none; 
+}
+
+.uil{
+    color: var(--font-color);
+}
+
+/* responsive */
+@media(max-width: 960px){
+    .mobile-nav-icon{
+        display: block;
+    }
+    .nav-list{
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: white;
+        height: 85vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        border-bottom-right-radius: 10em;
+        transition: all 0.3s ease;
+        z-index: 5;
+    }
+    .nav-list li{
+        margin: 40px 0;
+    }
+    #navCheck:checked ~ .mobile-nav-icon i::before{
+        content: "\e9b8";
+    }
+ 
+}
+

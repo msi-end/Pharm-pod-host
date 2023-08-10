@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us-Cipmedic</title>
+
+    <!-- style sheets -->
+    <link rel="stylesheet" href="/client/css/home/header.css">
+    <link rel="stylesheet" href="/client/css/home/clinics.css">
+    <link rel="stylesheet" href="/client/css/home/aboutUs.css">
+    <link rel="stylesheet" href="/client/css/home/events.css">
+    <link rel="stylesheet" href="/client/css/home/footer.css">
+
+    <link rel="stylesheet" href="/client/css/page/contactus.css">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <%- include('../partials/indexHeader.ejs') %>
+    <div class="contactUs ">
+        <div class="contactUs-box shadowBox ">
+            <div class="title">Send a Query</div>
+            <hr>
+            <form action="#">
+                <div class="user-unit">
+                    <div class="user-input">
+                        <p class="feature">Full Name:</p>
+                        <input type="text" name="handle" id="handle" placeholder="e.g: Utpal Rabha" required>
+                    </div>
+                    <div class="user-input">
+                        <p class="feature">Mobile Number:</p>
+                        <input type="text" name="cell" id="cell" placeholder="e.g: 987 654 3210" required>
+                    </div>
+                    <div class="user-input">
+                        <p class="feature">Email:</p>
+                        <input type="email" name="userEmail" id="userEmail" placeholder="e.g: cipmedicquery@email.com" required>
+                    </div>
+                    <div class="user-input">
+                        <p class="feature">Message:</p>
+                        <textarea name="textArea" id="textArea"placeholder="Type your message here" required></textarea>
+                    </div>
+                </div>
+                <div class="button-unit">
+                    <input type="submit" value="Send&rarr;">
+                </div>
+            </form>
+        </div>
+
+        <div class="contactInfo-box shadowBox">
+            <div class="title">Contact Info</div>
+            <hr>
+            <div class="info-details">
+                <p>
+                    <i class="uil uil-location-point"></i>
+                    <a href="#">Panjabari, SixMile, Guwahati</a>
+                </p>
+                <p>
+                    <i class="uil uil-envelope"></i>
+                    <a href="mailto:cipmedicquery@gmail.com">cipmedicquery@gmail.com</a>
+                </p>
+                <p>
+                    <i class="uil uil-phone"></i>
+                    <a href="tel:+91 7636896075">+91 7636896075</a>
+                </p>
+            </div>
+            <hr>
+            <div class="info-location">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3581.976168816173!2d91.811786!3d26.13232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDA3JzU2LjQiTiA5McKwNDgnNDIuNCJF!5e0!3m2!1sen!2sin!4v1678984234247!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/indexFooter.ejs') %>
+
+</body>
+</html>

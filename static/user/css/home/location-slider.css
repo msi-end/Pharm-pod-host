@@ -1,0 +1,133 @@
+:root{
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
+}
+/* location  */
+
+.location-container{
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+    background: var(--white);
+    /* z-index: -1; */
+}
+
+.location{
+    padding: 16px 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    margin-left: 40px;
+    border-radius: 10px;
+}
+.location-container .uil{
+    font-size: 1.5em;
+}
+.location-container .uil-location-point{
+    position: absolute;
+    top: 8px ;
+    left: 0;
+    margin-left: 10px;
+}
+.location-container .uil-multiply{
+        position: absolute;
+        top: 8px;
+        right: 0;
+        margin-right: 10px;
+}
+.uil-multiply{
+    display: none;
+}
+
+/* slider   */
+.slideshow-container{
+    width: 80%;
+    margin: auto;
+    position: relative;
+    /* z-index: -1; */
+}
+
+.mySlides{
+    display: none;
+}
+.mySlides img{
+    width: 100%;
+    max-height: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -32px;
+    color: var(--white);
+    width: auto;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover{
+    background: rgba(0, 0, 0, 0.8);
+}
+.slideDot{
+    text-align: center;
+}
+.slideDot .dot{
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    background: rgb(187, 187, 187);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background 0.6s ease;
+}
+.active, .slideDot .dot:hover{
+    background: rgb(128, 128, 128);
+}
+
+.slideshow-container .fade{
+    -webkit-animation-name : fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade{
+    from{opacity: 0.4;}
+    to{opacity: 1;}
+}
+@keyframes fade{
+    from{opacity: 0.4;}
+    to{opacity: 1;}
+}
+
+/* responsive */
+@media(max-width: 500px){
+    .prev, .next{
+        font-size: 14px;
+    }
+    .slideDot .dot{
+        width: 10px;
+        height: 10px;
+    }
+}
+@media(max-width: 300px){
+    .prev, .next{
+        font-size: 11px;
+    }
+}

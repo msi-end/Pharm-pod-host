@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinics-Cipmedic</title>
+
+     <!-- style sheets -->
+    <link rel="stylesheet" href="/user/css/home/header.css">
+    <link rel="stylesheet" href="/user/css/home/clinics.css">
+    <link rel="stylesheet" href="/user/css/home/aboutUs.css">
+    <link rel="stylesheet" href="/user/css/home/events.css">
+    <link rel="stylesheet" href="/user/css/home/footer.css">
+     <link rel="stylesheet" href="/user/css/page/doctors.css">
+     <link rel="stylesheet" href="/user/css/page/allclinics.css">
+ 
+     <!-- icons -->
+     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+     <!-- fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- header -->
+    <%- include('../partials/indexHeader.ejs') %>
+
+    <!-- searchBOx -->
+    <section class="searchBox shadowBox">
+        <input type="text" name="search" id="searchBOX" placeholder="Search for clinics..." onkeyup="filter_fun('searchBOX', 'cil-name')">
+        <i class="uil uil-multiply" id="closeSearchValue"></i>
+    </section>
+
+    <div class="gridBox">
+        <% if(data){ %>
+            <% data.forEach(function(data){ %>
+        <div class="grid-item u-u-u-u-u shadowBox" data-clinicidentity="<%= data.url %>">
+            <a href="https://<%= data.url %>">
+                <div class="grid-img img-1">
+                    <h3 class="cil-name"><%= data.c_name %></h3>
+                    <div class="grid-img-content">
+                        <p><i class="uil uil-user-md uil-color"></i></p>
+                        <span><%= data.star.toFixed(1) %>&#9733;</span>
+                    </div>
+                </div>
+                <div class="grid-content">
+                    <p><i class="uil uil-location-point"></i>
+                        <%= data.c_location %></p>
+                    <p><i class="uil uil-rupee-sign"></i>
+                        <%= data.fees %> at clinic
+                    </p>
+                </div>
+            </a>
+        </div>
+        <% }) %>
+<% } %>
+    </div>
+
+   
+    <%- include('../partials/indexFooter.ejs') %>
+
+    <script src="/user/js/localvar.js"></script>
+
+</body>
+</html>

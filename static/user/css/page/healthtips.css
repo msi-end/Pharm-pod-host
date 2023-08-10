@@ -1,0 +1,222 @@
+.body{
+    box-sizing: border-box;
+}
+.ad-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #8198ff;
+    box-sizing: border-box;
+    margin: 5px auto;
+    padding: 15px 30px;
+    width: 100%;
+    
+}
+#ad-headerText{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+.ad-header span{
+    font-size: 16px;
+    border-radius: 40px;
+    cursor: pointer;
+    background: #fff;
+    padding: 5px 11px;
+}
+.ad-header span:hover{
+    box-shadow: 0px 0px 20px 2px rgb(69 66 89);
+}
+
+.health-tips{
+    width: 95%;
+    box-sizing: border-box;
+    margin: 30px auto;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+
+}
+.health-tips > aside, article{
+    background: #fff;
+    border-radius: 6px;
+    padding: 1.5em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.health-tips aside{
+    width: 20%;
+}
+.health-tips .aside{
+    height: 364px;
+}
+#ar_bl_ht_head{
+    background: #231d1d;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    display: block;
+    /* text-align: center; */
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+aside .contents ul{
+    margin-top: 15px;
+    overflow-y: scroll;
+    height: 300px;
+    background: rgb(242, 242, 242);
+}
+aside .contents ul li{
+    width: 95%;
+    margin: 15px auto;
+    height: 30px;
+    background: #fff;
+    border-radius: 5px;
+    list-style: none;
+    padding: 3px 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+aside .contents ul li a{
+    padding-left: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #000;
+}
+aside :is(.contents, .sideContent_topic) ul li a:hover{
+    text-decoration: underline;
+
+}
+.health-tips article{
+    width: 45%;
+}
+article .articleTitle{
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    letter-spacing: 3px;
+}
+article .articleTitle span{
+    color: #002efb;
+}
+article .imgMain{
+    margin-top: 20px;
+    width: 100%;
+}
+article .imgMain img{
+    width: 100%;
+    height: auto;
+}
+article .readArticle{
+    margin-top: 20px;
+    font-size: 17px;
+    user-select: none;
+}
+article p .articleHeading{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+article .readArticle .read-more-btn{
+    color: #002efb;
+    cursor: pointer;
+}
+article p .readMore-text{
+    display: none;
+}
+article p .readMore-text--show{
+    display: inline;
+}
+
+.ad_health_img{
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+.ad_health_img img{
+    border: 1px solid gray;
+    width: 100%;
+    border-radius: 5px;
+}
+.ad_health_img span{
+    border: 1px solid gray;
+    font-size: 10px;
+    padding: 0 8px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    color: #fff;
+}
+.sideContent{
+    position: relative;
+}
+.sideContent .contentHeader{
+    background: #231d1d;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 20px;
+    font-size: 17px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sideContent .contentHeader .uis{
+    font-size: 30px;
+    cursor: pointer;
+}
+.sideContent ul{
+    background: rgb(242, 242, 242);
+    padding: 1px 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    transition: 0.5s ease;
+    display: none;
+}
+.sideContent ul li{
+    text-align: right;
+    list-style: none;
+    width: 100%;
+}
+.sideContent ul li a{
+    text-decoration: none;
+    color: #000;
+    padding-right: 10px;
+    font-size: 17px;
+}
+.relatedContent .sideContent_topic{
+    background: rgb(242, 242, 242);
+}
+.relatedContent .sideContent_topic ul li{
+    list-style: none;
+    padding: 5px 15px;
+}
+.sideContent_topic ul li a{
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+/* responsive */
+@media (max-width: 960px){
+   .health-tips aside{
+    width: 30%;
+   }
+   .health-tips article{
+    width: 50%;
+   } 
+}
+@media (max-width: 700px){
+    .health-tips{
+        flex-direction: column;
+    }
+    .health-tips :is(aside, article){
+        width: 90%;
+        margin: auto;
+       }
+}
