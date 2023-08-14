@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f2f2f2;
+}
+.cl-de-sec{
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.cl-de-sec header{
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+    position: relative;
+}
+.cl-de-sec header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 28px;
+    background: #4d4d4d;
+    border-radius: 5px;
+}
+.cl-de-sec .clientDetails{
+    margin-top: 20px;
+}
+.clientDetails form .title{
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.cl-de-sec .clientDetails .field{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.clientDetails form .input{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+form .input label{
+    font-size: 14px;
+    color: #333;
+}
+form .input input, form .Input :is(textarea, input){
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #333;
+    outline: none;
+    border-radius: 5px;
+}
+form .input input:focus, form .Input textarea:focus{
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+}
+form .input input[type="datetime-local"]{
+    cursor: pointer;
+}
+form .input input[type="file"]::file-selector-button{
+    cursor: pointer;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+form .Input textarea{
+    width: 100%;
+    height: 200px;
+    resize: none;
+}
+form .Input input{
+    width: 100%;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 400;
+    background: #333;
+    color: #fff;
+}
+.clientDetails form .doctorAddition{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.clientDetails form .drIcon:hover, form .Input input[type="submit"]:hover{
+    background: #595959;
+}
+.clientDetails form .drIcon{
+    font-size: 14px;
+    border: 1px solid #333;
+    padding: 10px 30px 10px 15px;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+}
+.clientDetails form .uil{
+    font-size: 26px;
+    font-weight: 500;
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+.copyRight{
+    text-align: center;
+    margin: 5% auto;
+    line-height: 30px;
+}
+/* responsive */
+@media(max-width: 875px){
+    .cl-de-sec{
+        width: 90%;
+    }
+    .clientDetails form .input{
+        max-width: 800px;
+        width: 100%;
+    }
+}
