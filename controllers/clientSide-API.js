@@ -82,7 +82,7 @@ exports.docStatus = (req, res) => {
     let q = `SELECT * from cl_doctor WHERE c_id ='${req.query.user}'`
     databaseCon.query(q, (err, result) => {
         if (err) throw err;
-        if (result.length > 0) {
+        if (result.length >=0) { 
             res.status(200).send({ data: result, status: true, msg: 'Sucessful' })
         } else {
             res.status(403).send({ status: false, msg: 'Some thing wents wrong !' })
