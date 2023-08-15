@@ -17,8 +17,8 @@ exports.add = (req, res) => {
                 databaseCon.query(sql, [params], function (err, result) {
                     if (err) throw err;
                     res.send({ status: true, msg: 'Application submited Sucessfully!' });
-                    let data ={id:result.insertId,name:req.body.name,number:req.body.number,otherInfo:req.body.otherInfo,doc:req.body.doctor,date:req.body.date}
-                    sse.sendSSE( data,user )
+                    let data = { id: result.insertId, name: req.body.name, number: req.body.number, otherInfo: req.body.otherInfo, doc: req.body.doctor, date: req.body.date }
+                    sse.sendSSE(data, user)
                     //sms.smsAPI(req.body.number, `Dear ${req.body.name}, Your booking on Cipmedic is Successful.`);
                 })
             } else { res.status(403).send({ status: false, msg: 'Application Limit Exceeded!' }) }
@@ -40,8 +40,13 @@ exports.pushData = (req, res) => {
     let query = `INSERT INTO rr_data ( c_id, rating, review, userName, email) VALUES ('${req.body.idNum}', ${b}, ${a}, ${c}, ${d})`;
     databaseCon.query(query, (err, res) => {
         if (err) throw err;
+        if (err) {
+            res.status(301).send({ status: false, msg: 'Unable to send data' })
+        } else {
+            res.status(200).send({ status: true, msg: 'Sucessfully eend data' })
+        }
+
     })
-    res.status(200).send({ status: true, msg: 'Sucessfully Send' })
 }
 // write-add review
 exports.getClsID = (req, res) => {
