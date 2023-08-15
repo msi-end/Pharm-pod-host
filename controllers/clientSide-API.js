@@ -38,14 +38,12 @@ exports.pushData = (req, res) => {
     let c = req.body.u_name === '' ? null : `"${req.body.u_name}"`;
     let d = req.body.mail === '' ? null : `"${req.body.mail}"`;
     let query = `INSERT INTO rr_data ( c_id, rating, review, userName, email) VALUES ('${req.body.idNum}', ${b}, ${a}, ${c}, ${d})`;
-    databaseCon.query(query, (err, res) => {
-        if (err) throw err;
+    databaseCon.query(query, (err, result) => {
         if (err) {
             res.status(301).send({ status: false, msg: 'Unable to send data' })
         } else {
             res.status(200).send({ status: true, msg: 'Sucessfully eend data' })
         }
-
     })
 }
 // write-add review

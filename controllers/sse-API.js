@@ -16,6 +16,7 @@ const getRealtime = (req, res) => {
         'Connection': 'keep-alive',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET',
+        'X-Accel-Buffering': 'no',
         'Access-Control-Allow-Headers': 'Content-Type'
     });
     let client = { id: Date.now(), user: req.query.user, res };
