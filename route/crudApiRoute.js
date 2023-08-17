@@ -26,7 +26,7 @@ router.put('/upd', crudModel.update);
 // //To delete a patient
 router.delete('/del', crudModel.delete);
 
-// //To schedule patient
+// //To Reject and  Delect request patient reqs
 router.put('/updApvl', crudModel.updateApvl);
 router.delete('/updApvl', crudModel.updateApvl);
 

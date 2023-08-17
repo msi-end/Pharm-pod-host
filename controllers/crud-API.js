@@ -42,10 +42,10 @@ exports.apReq = async (req, res) => {
 }
 //To get all doctor avaibility
 exports.getDoc = (req, res) => {
-    let q = `SELECT * from cl_doctor WHERE c_id ='${req.params.id}'`
+    let q = `SELECT * from cl_doctor WHERE c_id ='${req.query.user}';`
     databaseCon.query(q, (err, result) => {
         if (err) throw err;
-        if (result > 0) {
+        if (result) {
             res.status(200).send({ data: result, status: true, msg: 'Sucessful' })
         } else {
             res.status(403).send({ status: false, msg: 'Something wents wrong !' })
@@ -146,12 +146,13 @@ exports.findOne = (req, res) => {
 // Auto Approval deleted and approve data mover
 exports.updateApvl = (req, res) => {
     let obj = {
-        Acpt: `UPDATE ${req.session.user_id}_PS_data SET p_aptStatus=? WHERE id='${req.query.Acpt}'`,
-        Rejt: `INSERT INTO SU_Rej_PSData(p_name, p_OthInfo, p_doctor,p_aptDate,p_number,c_id)  SELECT p_name, p_OthInfo, p_doctor,p_aptDate,p_number,'${req.session.user_id}' FROM ${req.session.user_id}_PS_data WHERE id ='${req.query.Rejt}';DELETE FROM ${req.session.user_id}_PS_data WHERE id='${req.query.Rejt}'`
+        Acpt: `UPDATE ${req.query.user}_PS_data SET p_aptStatus=? WHERE id='${req.body.Acpt}'`,
+        Rejt: `INSERT INTO SU_Rej_PSData(p_name, p_OthInfo, p_doctor,p_aptDate,p_number,c_id)  SELECT p_name, p_OthInfo, p_doctor,p_aptDate,p_number,'${req.query.user}' FROM ${req.query.user}_PS_data WHERE id ='${req.body.Rejt}';DELETE FROM ${req.query.user}_PS_data WHERE id='${req.body.Rejt}'`
     }
-    if (Object.keys(req.query) in obj) {
+    console.log(Object.keys(req.body) in obj)
+    if (Object.keys(req.body) in obj) {
         console.log(obj[Object.keys(req.query)]);
-        databaseCon.query(obj[Object.keys(req.query)], ['true'], (err, results) => {
+        databaseCon.query(obj[Object.keys(req.body)], ['true'], (err, results) => {
             if (err) { res.status(400).send({ status: 'false', msg: 'Setting Updated Unsucessful!' }) } else {
                 res.status(200).send({ status: 'true', msg: 'Setting Updated Sucessfully! , Refresh the Page' })
             }
