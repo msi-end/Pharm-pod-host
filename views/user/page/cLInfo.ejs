@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details | Cipmedic</title>
+    <!-- fonts css  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- icon css  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- css  -->
+    <link rel="stylesheet" href="/user/css/header.css" />
+    <link rel="stylesheet" href="/user/css/footer.css" />
+    <link rel="stylesheet" href="/user/css/pages/cLInfo.css">
+
+<body>
+    <%- include('../partials/indexHeader.ejs') %>
+<br><br><br>
+    <section class="cl-de-sec">
+        <header>Registration Form</header>
+        <div class="clientDetails">
+            <form action="#">
+                <span class="title">Client Details</span>
+                <div class="field">
+                    <div class="input">
+                        <label>Name of the Clinic</label>
+                        <input type="text" placeholder="Enter the name of the clinic">
+                    </div>
+                    <div class="input">
+                        <label>Category</label>
+                        <input type="text" placeholder="e.g: General Physician Clinic">
+                    </div>
+                    <div class="input">
+                        <label>Address of the Clinic</label>
+                        <input type="text" placeholder="Address in full">
+                    </div>
+                    <div class="input">
+                        <label>Google Map Location</label>
+                        <input type="text" placeholder="Use google maps">
+                    </div>
+                    <div class="input">
+                        <label>Visiting Charges</label>
+                        <input type="text" placeholder="e.g: Rs 500/-">
+                    </div>
+                    <div class="input">
+                        <label>Timings</label>
+                        <input type="datetime-local">
+                    </div>
+                    <div class="input">
+                        <label>Photo(LOGO)</label>
+                        <input type="file">
+                    </div>
+                    <div class="input">
+                        <label>Gallery Photos</label>
+                        <input type="file" multiple>
+                    </div>
+                </div>
+                <div class="doctorAddition">
+                    <span class="title">Doctor Details</span>
+                    <span class="drIcon">Add a doctor&nbsp;<i class="uil uil-plus-circle"></i></span>
+                </div>
+                <div class="field">
+                    <div class="input">
+                        <label>Name of the Doctor</label>
+                        <input type="text" placeholder="Enter the name of the doctor">
+                    </div>
+                    <div class="input">
+                        <label>Speciality</label>
+                        <input type="text" placeholder="e.g: Neurosurgeon">
+                    </div>
+                    <div class="input">
+                        <label>Educational Qualification</label>
+                        <input type="text" placeholder="e.g: MBBS">
+                    </div>
+                    <div class="input">
+                        <label>Experience(in years)</label>
+                        <input type="text" placeholder="e.g: 5years">
+                    </div>
+                    <div class="input">
+                        <label>Linguistic Abilities</label>
+                        <input type="text" placeholder="e.g: English, Assamese">
+                    </div>
+                    <div class="input">
+                        <label>Profile Image</label>
+                        <input type="file">
+                    </div>
+                    <div class="input">
+                        <label>Medical Certificate</label>
+                        <input type="file">
+                    </div>
+                </div>
+
+                <div class="Input">
+                    <label>About the Doctor</label>
+                    <textarea></textarea>
+                </div>
+                <div class="Input">
+                    <input type="submit" value="Submit&rarr;">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div class="copyRight">
+        <p>Copyright &copy;2023 by Raynrel Infotec. All rights reserved.</p>
+        <p>Powered by Cipmedic</p>
+    </div>
+
+    <%- include('../partials/indexFooter.ejs') %>
+</body>
+
+</html>

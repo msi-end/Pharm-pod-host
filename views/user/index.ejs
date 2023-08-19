@@ -1,172 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cipmedics</title>
-    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cipmedic</title>
+
     <!-- style sheets -->
-    <link rel="stylesheet" href="/user/css/home/header.css">
-    <link rel="stylesheet" href="/user/css/home/location-slider.css">
-    <link rel="stylesheet" href="/user/css/home/clinics.css">
-    <link rel="stylesheet" href="/user/css/home/aboutUs.css">
-    <link rel="stylesheet" href="/user/css/home/events.css">
-    <link rel="stylesheet" href="/user/css/home/footer.css">
+    <link rel="stylesheet" href="/user/css/main.css">
+    <link rel="stylesheet" href="/user/css/header.css" />
+    <link rel="stylesheet" href="/user/css/footer.css" />
+
     <!-- icons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css" />
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
-
 </head>
-<body>
-    <%- include('./partials/indexHeader.ejs') %>
-      <!--location -->
-      <section class="location-container shadowBox">
-        <a href="#"><i class="uil uil-location-point"></i></a>
-        <input type="text" placeholder="Enter your location..." class="location" />
-        <i class="uil uil-multiply"></i>
-    </section>
 
+<body>
+  
+    <%- include('./partials/indexHeader.ejs') %>
+
+    <!--location -->
+    <section class="location-container">
+        <a href="#" id="map"><span class="uil uil-location-point"></span></a>
+        <input type="text" placeholder="Enter your location..." class="location" />
+        <a href="#" id="closeMap"><span class="uil uil-multiply"></span></a>
+
+    </section>
 
     <!-- slider images (1215x500px)-->
     <div class="slideshow-container">
         <div class="mySlides fade">
-            <img src="./user/img/main/slider-1.jpg" alt="medicine" />
+            <img src="/user/img/main/slider-1.jpg" alt="medicine" />
         </div>
 
         <div class="mySlides fade">
-            <img src="./user/img/main/slider-2.jpg" alt="medicine" />
+            <img src="/user/img/main/slider-2.jpg" alt="medicine" />
         </div>
 
         <div class="mySlides fade">
-            <img src="./user/img/main/slider-3.jpg" alt="medicine" />
+            <img src="/user/img/main/slider-3.jpg" alt="medicine" />
         </div>
 
-        <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
     </div>
-    <!-- <div class="slideDot">
-        <span class="dot" onclick="currentSlides(1)"></span>
-        <span class="dot" onclick="currentSlides(2)"></span>
-        <span class="dot" onclick="currentSlides(3)"></span>
-    </div> -->
+    <br />
 
-    
     <!-- Clinics  -->
-    <div class="mainContainer shadowBox clinicContain">
+    <div class="Container clinicContainer">
         <div class="clinics">
             <div class="clinicsText">
                 <h1 class="textHeader">Clinics</h1>
-                <p>Explore Clinics near you....</p>
+                <p>Exlplore Clinics near you....</p>
                 <hr>
             </div>
-            <a href="/p/clinics">
+            <a href="/views/allclinics.html">
                 <button class="btn">View All</button>
             </a>
         </div>
-        
-                <!-- ==cards== -->
-    <div class="card">
 
-    <div class="cardBox shadowBox">
-        <div class="cardImage">
-            <img src="/user/img/Clinics/default/default-home-1.jpg" alt="clinic">
-        </div>
-        <div class="card-content">
-            <h3>Dispur Polyclinic</h3>
-            <h4><i class="uil uil-user-md"></i>
-                Dr Bhaskar Neog</h4>
-            <p><i class="uil uil-location-point"></i>
-                Ganeshguri,Guwahati</p>
-            <p> <i class="uil uil-money-bill"></i>
-                <i class="uil uil-rupee-sign"></i>
-                500 at clinic
-            </p>
-            <p>
-                <button class="bk-Btn btn">
-                    Book Appoinment <span>&rarr;</span>
-                </button>   
-            </p>
-        </div>
-    </div>
+        <!-- ==cards== -->
+        <div class="card">
+            <div class="cardBox box-1">
+                <a href="https://breathewellness.org/">
+                    <div class="cardImage">
+                        <img src="/user/img/Clinics/default/default-home-1.jpg" alt="clinic" />
+                    </div>
+                    <div class="cardContent">
+                        <h4>Breathe Wellness Centre</h4>
+                        <h5><i class="uil uil-user-md"></i>Dr. Ziaul Haque</h5>
+                        <p>
+                            <i class="uil uil-location-point"></i>Near ADP bridge, Nagaon
+                        </p>
+                        <p id="money">
+                            &#8377;350 at clinic
+                        </p>
+                        <a href="#" id="starf">4.5&starf;</a>
+                    </div>
+                </a>
+            </div>
 
-    <!-- Clinic-2  -->
+            <!-- Clinic-2  -->
 
-    <div class="cardBox shadowBox">
-        <div class="cardImage">
-            <img src="/user/img/Clinics/default/default-home-2.jpg" alt="clinic">
-        </div>
-        <div class="card-content">
-            <h3>The Eyecare Centre</h3>
-            <h4><i class="uil uil-user-md"></i>
-                Dr Utpal Kr. Deka</h4>
-            <p><i class="uil uil-location-point"></i>
-                Guwahati Club, Guwahati</p>
-            <p> <i class="uil uil-money-bill"></i>
-                <i class="uil uil-rupee-sign"></i>
-                400 at clinic
-            </p>
-            <p>
-                <button class="bk-Btn btn">
-                    Book Appoinment <span>&rarr;</span>
-                </button>   
-            </p>
-        </div>
-    </div>
+            <div class="cardBox">
+                <a href="/html/clinicnames/dispur.html">
+                    <div class="cardImage">
+                        <img src="/user/img/Clinics/default/default-home-2.jpg" alt="clinic" />
+                    </div>
+                    <div class="cardContent">
+                        <h4>The Eyecare Centre</h4>
+                        <h5><i class="uil uil-user-md"></i>Dr Utpal Kr. Deka</h5>
+                        <p>
+                            <i class="uil uil-location-point"></i>
+                            Guwahati Club, Guwahati
+                        </p>
+                        <p id="money">
+                            &#8377;400 at clinic
+                        </p>
+                        <a href="#" id="starf">4.5&starf;</a>
+                    </div>
+                </a>
+            </div>
+            <!-- Clinic-3  -->
 
-    <!-- Clinic-3  -->
-
-    <div class="cardBox shadowBox">
-        <div class="cardImage">
-            <img src="/user/img/Clinics/default/default-home-3.jpg" alt="clinic">
+            <div class="cardBox">
+                <a href="/html/clinicnames/dispur.html">
+                    <div class="cardImage">
+                        <img src="/user/img/Clinics/default/default-home-3.jpg" alt="clinic" />
+                    </div>
+                    <div class="cardContent">
+                        <h4>Precision Dental Clinic</h4>
+                        <h5><i class="uil uil-user-md"></i>Dr Bhava Jyoti Sharma</h5>
+                        <p>
+                            <i class="uil uil-location-point"></i>
+                            Ulubari,Guwahati
+                        </p>
+                        <p id="money">
+                            &#8377;600 at clinic
+                        </p>
+                        <a href="#" id="starf">4.5&starf;</a>
+                    </div>
+                </a>
+            </div>
         </div>
-        <div class="card-content">
-            <h3>Precision Dental Clinic </h3>
-            <h4><i class="uil uil-user-md"></i>
-                Dr Bhava Jyoti Sharma</h4>
-            <p><i class="uil uil-location-point"></i>
-                Ulubari,Guwahati</p>
-            <p> <i class="uil uil-money-bill"></i>
-                <i class="uil uil-rupee-sign"></i>
-                500 at clinic
-            </p>
-            <p>
-                <button class="bk-Btn btn">
-                    Book Appoinment <span>&rarr;</span>
-                </button>   
-            </p>
-        </div>
-    </div>
-
-</div>
     </div>
 
     <!-- about us -->
 
-    <div class="mainContainer shadowBox">
-            <div class="aboutContent">
-                <img src="/user/img/main/about-img.jpg" alt="doctor" width="400" height="400" class="shadowBox">
+    <div class="Container aboutContainer">
+        <div class="aboutContent">
+            <img src="/user/img/main/about.jpg" alt="doctor" width="400" height="400" class="shadowBox" />
 
-                <div class="aboutText">
-                    <div class="aboutHeader">
-                        <h1 class="textHeader">About Us</h1>
-                        <hr>
-                    </div>
-                    <p>Cipmedic has a team of highly qualified and experienced doctors and healthcare professionals who are available online to provide consultations and medical advice. These professionals are trained to diagnose and treat various medical conditions and provide personalized treatment plans based on the patient's needs.Cipmedic's mission is to help others by providing quality medical care and resources. This mission is based on the belief that everyone deserves access to proper medical care, and the company aims to make this a reality for as many people as possible. The company is committed to providing affordable and accessible medical care to all individuals, regardless of their social or economic status.</p>
-                    <a href="/p/aboutus">
-                        <button class="btn lrn-btn">Learn More</button>
-                    </a>
+            <div class="aboutText">
+                <div class="aboutHeader">
+                    <h1 class="textHeader">About Us</h1>
+                    <hr />
                 </div>
+                <p>
+                    Cipmedic has a team of highly qualified and experienced doctors and healthcare professionals who are
+                    available online to provide consultations and medical advice. These professionals are trained to
+                    diagnose and treat various medical conditions and provide personalized treatment plans based on the
+                    patient's needs.Cipmedic's mission is to help others by providing quality medical care and
+                    resources. This mission is based on the belief that everyone deserves access to proper medical care,
+                    and the company aims to make this a reality for as many people as possible. The company is committed
+                    to providing affordable and accessible medical care to all individuals, regardless of their social
+                    or economic status.
+                </p>
+                <a href="/p/aboutus">
+                    <button class="btn">Learn More</button>
+                </a>
+            </div>
         </div>
     </div>
 
     <!-- Events -->
 
-    <div class="mainContainer shadowBox eventMainBox">
+    <div class="Container eventMainBox">
         <h1 class="textHeader">Health tips</h1>
         <div class="eventText">
             <p>See whats happening around you...</p>
@@ -178,137 +167,157 @@
 
             <div class="event-firstBox">
                 <div class="event-firstBox-img">
-                    <img src="/user/img/main/event-img.jpg" alt="event">
+                    <img src="/user/img/main/ad.jpg" alt="event" />
                 </div>
-                <p>Living a healthy life is essential to prevent diseases and maintain overall well-being.</p>
-                
+                <p>
+                    Living a healthy life is essential to prevent diseases and maintain overall well-being.
+                </p>
                 <a href="/p/health-tips">
                     <button class="btn rv-btn">Know More</button>
                 </a>
             </div>
-             
+
             <!-- 2nd box -->
-        <div class="event-secondBox">
-
-        
-            <div class="event-secondChild">
-               <!-- == 1st profile == -->
-            <div class="profile-card">
-                <a href="#">
-                    <div class="profileFlex">
-                        <img src="/user/img/Clinics/default/doctorDefault.png" alt="Doctor">
-                        <div class="profile-cardInfo">
-                            <h4>Dr Bhaskar Neog</h4>
-                            <p>
-                                <i class="uil uil-user-md uil-color"></i>
-                                Diabetologist
-                            </p>
-                            <p>
-                                <i class="uil uil-university uil-color"></i>
-                                MBBS
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-               <!-- == 2nd profile == -->
-            <div class="profile-card">
-                <a href="#">
-                    <div class="profileFlex">
-                        <img src="/user/img/Clinics/default/doctorDefault.png" alt="Doctor">
-                        <div class="profile-cardInfo">
-                            <h4>Dr Manabendra Nayak</h4>
-                            <p>
-                                <i class="uil uil-user-md uil-color"></i>
-                                Consultant Physician
-                            </p>
-                            <p>
-                                <i class="uil uil-university uil-color"></i>
-                                MBBS, MD
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-               <!-- == 3rd profile == -->
-            <div class="profile-card">
-                <a href="#">
-                    <div class="profileFlex">
-                        <img src="/user/img/Clinics/default/doctorDefault.png" alt="Doctor">
-                        <div class="profile-cardInfo">
-                            <h4>Dr P.N. Uzir</h4>
-                            <p>
-                                <i class="uil uil-user-md uil-color"></i>
-                                Medicine
-                            </p>
-                            <p>
-                                <i class="uil uil-university uil-color"></i>
-                                MBBS
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-               <!-- == 4th profile == -->
-               <div class="profile-card">
-                <a href="#">
-                    <div class="profileFlex">
-                        <img src="/user/img/Clinics/default/doctorDefault.png" alt="Doctor">
-                        <div class="profile-cardInfo">
-                            <h4>Dr Santanu Medhi</h4>
-                            <p>
-                                <i class="uil uil-user-md uil-color"></i>
-                                General Physician
-                            </p>
-                            <p>
-                                <i class="uil uil-university uil-color"></i>
-                                MBBS
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-               <!-- == 5th profile == -->
-                <div class="profile-card">
-                    <a href="#">
-                        <div class="profileFlex">
-                            <img src="/user/img/Clinics/default/doctorDefault.png" alt="Doctor">
-                            <div class="profile-cardInfo">
-                                <h4>Dr Deep Dutta</h4>
-                                <p>
-                                    <i class="uil uil-user-md uil-color"></i>
-                                    General Physician
-                                </p>
-                                <p>
-                                    <i class="uil uil-university uil-color"></i>
-                                    MBBS
-                                </p>
+            <div class="event-secondBox">
+                <div class="event-secondChild">
+                    <!-- == 1st profile == -->
+                    <div class="profile-card">
+                        <a href="https://breathewellness.org/">
+                            <div class="profileFlex">
+                                <img src="/user/img/doctors/upasona.jpg" alt="Doctor">
+                                <div class="profile-cardInfo">
+                                    <h4>Dr. Upasona Saharia </h4>
+                                    <p>
+                                        <i class="uil uil-user-md uil-color"></i>
+                                        Endogynaecology
+                                    </p>
+                                    <p>
+                                        <i class="uil uil-university uil-color"></i>
+                                        MBBS, DGO, FMAS
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+
+                    <!-- == 2nd profile == -->
+                    <div class="profile-card">
+                        <a href="https://breathewellness.org/">
+                            <div class="profileFlex">
+                                <img src="/user/img/doctors/ankur.jpg" alt="Doctor">
+                                <div class="profile-cardInfo">
+                                    <h4>Dr. Ankur Bhattacharya</h4>
+                                    <p>
+                                        <i class="uil uil-user-md uil-color"></i>
+                                        Consultant Neuropsychiatrist
+                                    </p>
+                                    <p>
+                                        <i class="uil uil-university uil-color"></i>
+                                        MBBS, MD (Psychiatry)
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- == 3rd profile == -->
+                    <div class="profile-card">
+                        <a href="https://breathewellness.org/">
+                            <div class="profileFlex">
+                                <img src="/user/img/doctors/bhaskar.jpg" alt="Doctor">
+                                <div class="profile-cardInfo">
+                                    <h4>Dr. Bhaskar Jyoti Pegu </h4>
+                                    <p>
+                                        <i class="uil uil-user-md uil-color"></i>
+                                        Orthopaedic Surgeon
+                                    </p>
+                                    <p>
+                                        <i class="uil uil-university uil-color"></i>
+                                        MBBS, MS
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- == 4th profile == -->
+                    <div class="profile-card">
+                        <a href="https://breathewellness.org/">
+                            <div class="profileFlex">
+                                <img src="/user/img/doctors/rosely.jpg" alt="Doctor">
+                                <div class="profile-cardInfo">
+                                    <h4>Dr. Rosely Timungpi</h4>
+                                    <p>
+                                        <i class="uil uil-user-md uil-color"></i>
+                                        Skin,Nail and Hair Specialist
+                                    </p>
+                                    <p>
+                                        <i class="uil uil-university uil-color"></i>
+                                        MBBS,MD,Dermatology(DVL)
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- == 5th profile == -->
+                    <div class="profile-card">
+                        <a href="https://breathewellness.org/">
+                            <div class="profileFlex">
+                                <img src="/user/img/doctors/husni.jpg" alt="Doctor">
+                                <div class="profile-cardInfo">
+                                    <h4>Dr. Md. Husni Mubarak Akand</h4>
+                                    <p>
+                                        <i class="uil uil-user-md uil-color"></i>
+                                        General and Laparoscopic Surgeon
+                                    </p>
+                                    <p>
+                                        <i class="uil uil-university uil-color"></i>
+                                        M.B.B.S, MS(General Surgery)
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- == 6th profile == -->
+                    <div class="profile-card">
+                        <a href="https://breathewellness.org/">
+                            <div class="profileFlex">
+                                <img src="/user/img/doctors/kalyan.jpg" alt="Doctor">
+                                <div class="profile-cardInfo">
+                                    <h4>Dr. Kalyan Borah</h4>
+                                    <p>
+                                        <i class="uil uil-user-md uil-color"></i>
+                                        Emergency Medicine & Critical Care
+                                    </p>
+                                    <p>
+                                        <i class="uil uil-university uil-color"></i>
+                                        M.B.B.S, MD
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-
-
+                <!-- <a href="/html/pages/alldoctrs.html">
+                    <button class="btn rv-btn">View More Doctors</button>
+                </a> -->
             </div>
-            <!-- <a href="/p/doctors">
-                <button class="btn rv-btn">View More Doctors</button>
-            </a> -->
         </div>
-
-        </div>
-
     </div>
 
+
+    <section class="Container shadowBox enq">
+        <div class="enquire">
+            <span>List your clinic with us.Enjoy exclusive benefits i.e.
+            </span>
+            <span class="large">marketing, branding, lead generation</span> & much more.
+        </div>
+        <button class="btn"><a href="/p/enquiry">Enquire Now&rarr;</a></button>
+    </section>
     <!-- footer  -->
     <%- include('./partials/indexFooter.ejs') %>
 
-    <!-- javascript -->
-    <script src="/user/js/script.js"></script>
-
-
 </body>
+
 </html>
