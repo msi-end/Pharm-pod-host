@@ -1,14 +1,23 @@
-name: Access server
-on: push
+name: Deploy
+
+# Trigger the workflow on push and
+# pull request events on the master branch
+on:
+  pull_request:
+    branches: ["master"]
+
+# Authenticate to the the server via ssh
+# and run our deployment script
 jobs:
-  access_server:
-    name: Access server
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Create a file
+      - uses: actions/checkout@v3
+      - name: Deploy to Server
         uses: appleboy/ssh-action@master
         with:
-          host: 154.41.253.236
-          username: reynrel01
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_USERNAME }}
+         # port: ${{ secrets.PORT }}
           key: ${{ secrets.PRIVATE_KEY }}
-          script: echo hello world > hello.txt
+          script: "cd ~/project_folder_name && ./.scripts/deploy.sh"
