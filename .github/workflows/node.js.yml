@@ -20,4 +20,4 @@ jobs:
           username: ${{ secrets.HOST_USERNAME }}
          # port: ${{ secrets.PORT }}
           key: ${{ secrets.PRIVATE_KEY }}
-          script: "cd ~/project_folder_name && ./.scripts/deploy.sh"
+          script: "cd ~/cipmedic_3001 && ./.scripts/deploy.sh"
