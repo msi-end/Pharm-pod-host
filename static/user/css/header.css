@@ -58,7 +58,7 @@ header{
     font-size: 1.1em;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     color: var(--black);
     position: relative;
 }
@@ -78,7 +78,18 @@ header{
     transform: scaleX(1);
     transform-origin: left;
 }
-
+.nav-list li:last-child a{
+    background: var(--blue);
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--white);
+    font-size: 1em;
+    letter-spacing: 0.1em;
+}
+.nav-list li:last-child a:hover::before{
+    transform: scale(0);
+}
 #hamburger{
     font-size: 2em;
     cursor: pointer;
@@ -119,6 +130,8 @@ header{
     .nav-list.active{
         left: 0;
     }
-    
+    .nav-list li:last-child a{
+        width: 80%;
+    }
     
 }

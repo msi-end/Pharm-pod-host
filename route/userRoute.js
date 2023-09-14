@@ -36,6 +36,9 @@ route.get('/p/doctors', (req, res) => {
 route.get('/p/enquiry', (req, res) => {
     res.render('../views/user/page/cLInfo.ejs')
 })
+route.get('/p/service', (req, res) => {
+    res.render('../views/user/page/productInfo.ejs')
+})
 // route.post('/:user/addApply', crudModel.add)
 
 
