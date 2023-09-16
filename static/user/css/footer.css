@@ -116,8 +116,12 @@
     text-align: center;
     height: 2em;
     text-transform: uppercase;
+<<<<<<< HEAD
     font-size: 13px;
     margin-top: 10px;
+=======
+    font-size: 0.8em;
+>>>>>>> 485736e397f2867e5aa47c23d9d7aafab0b9dcf2
 }
 
 
