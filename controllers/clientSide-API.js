@@ -8,6 +8,7 @@ const sse = require('./sse-API.js');
 // patient application req
 exports.add = (req, res) => {
     let user = req.query.user;
+    let tdt = new Date().toLocaleDateString('en-GB', { day: "2-digit", month: "2-digit", year: "numeric" })
     databaseCon.query(`SELECT COUNT(p_aptDate) as count from ${user}_PS_data WHERE p_aptDate='${req.body.date}'; SELECT maxApply ,autoReqAppl,form_Status from client_Info WHERE c_id='${user}'`, function (err, results, fields) {
         if (err) throw err;
         if (results[1][0].form_Status == 'true') {
@@ -17,14 +18,15 @@ exports.add = (req, res) => {
                 databaseCon.query(sql, [params], function (err, result) {
                     if (err) throw err;
                     res.send({ status: true, msg: 'Application submited Sucessfully!' });
-                    let data = { id: result.insertId, name: req.body.name, number: req.body.number, otherInfo: req.body.otherInfo, doc: req.body.doctor, date: req.body.date }
-                    sse.sendSSE(data, user)
-                    //sms.smsAPI(req.body.number, `Dear ${req.body.name}, Your booking on Cipmedic is Successful.`);
-                })
-            } else { res.status(403).send({ status: false, msg: 'Application Limit Exceeded!' }) }
+                    if (results[1][0].autoReqAppl == 'true'&& tdt == req.body.date) {
+                        let data = { id: result.insertId, name: req.body.name, number: req.body.number, otherInfo: req.body.otherInfo, doc: req.body.doctor, date: req.body.date }
+                        sse.sendSSE(data, user)
+               //         sms.smsAPI(req.body.number, `Dear ${req.body.name}, Your booking on Cipmedic is Successful.`);
+                    }
+                }) 
+            } else { res.status(403).send({ status: false, msg: 'Application Limit Exceeded! Call Us for Any Query!' }) }
         } else {
-            res.send({ status: false, msg: 'Application Submission is temporarily Closed!' });
-            //sms.smsAPI(req.body.number, `Dear ${req.body.name}, Your booking is Unsuccessful!`);
+            res.send({ status: false, msg: 'Application Submission is temporarily Closed! You Can Contact Via Call.' });
         }
     })
 }
@@ -79,10 +81,10 @@ exports.getRevID = (req, res) => {
 
 // Doctors Avaibility 
 exports.docStatus = (req, res) => {
-    let q = `SELECT * from cl_doctor WHERE c_id ='${req.query.user}'`
+    let q = `SELECT doc_id, d_name,status,day from cl_doctor WHERE c_id ='${req.query.user}'`
     databaseCon.query(q, (err, result) => {
         if (err) throw err;
-        if (result.length >=0) { 
+        if (result.length >= 0) {
             res.status(200).send({ data: result, status: true, msg: 'Sucessful' })
         } else {
             res.status(403).send({ status: false, msg: 'Some thing wents wrong !' })

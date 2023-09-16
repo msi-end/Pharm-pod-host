@@ -1,5 +1,5 @@
-:root{
-    --body-color : rgb(242, 242, 242);
+:root {
+    --body-color: rgb(242, 242, 242);
     --font-color: rgb(0, 0, 0);
     --shadow-color-1: rgb(190, 190, 190);
     --shadow-color-2: rgb(255, 255, 255);
@@ -13,131 +13,146 @@
     --blue: rgb(0, 153, 255);
 }
 
-.footer-Content{
+.footer-Content {
     display: flex;
     background: var(--shadow-color-2);
 }
 
-.around{
+.around {
     padding: 2em;
 }
 
-.transForm{
+.transForm {
     text-transform: uppercase;
 }
 
-.bk-ground{
+.bk-ground {
     border-right: 1px solid var(--background-color);
 }
-.firstMenu{
+
+.firstMenu {
     width: 50%;
 }
 
-.firstMenu p{
+.firstMenu p {
     line-height: 1.9em;
 }
-.secondMenu{
+
+.secondMenu {
     width: 20%;
 }
 
-.footList{
+.footList {
     margin-top: 0.5em;
 }
 
-.footList li{
+.footList li {
     list-style: none;
     line-height: 1.9em;
     font-size: 1.1em;
 }
 
-.footList li a{
+.footList li a {
     color: var(--font-color);
     text-decoration: none;
 }
 
-.footList li a:hover{
+.footList li a:hover {
     color: var(--blue);
 }
-.thirdMenu{
+
+.thirdMenu {
     width: 30%;
 }
 
-.socialIcon{
+.socialIcon {
     display: flex;
     margin-top: 1em;
 }
 
-.socialIcon span{
+.socialIcon span {
     margin-right: 2em;
     font-size: 1.5em;
 }
 
 
-.uil-whatsapp:hover{
+.uil-whatsapp:hover {
     color: var(--wp-color);
 }
-.uil-instagram:hover{
+
+.uil-instagram:hover {
     color: var(--is-color);
 }
-.uil-facebook-f:hover{
+
+.uil-facebook-f:hover {
     color: var(--fb-color);
 }
-.uil-youtube:hover{
+
+.uil-youtube:hover {
     color: var(--yt-color);
 }
-.uil-twitter:hover{
+
+.uil-twitter:hover {
     color: var(--tw-color);
 }
 
-#socialEmail{
+#socialEmail {
     padding: 0.4em 0.8em;
     outline: none;
     border: 1px solid var(--background-color);
     border-radius: 5px;
 }
 
-.newsletter{
+.newsletter {
     margin: 0.5em auto;
 }
 
-.ft-btn{
+.ft-btn {
     margin: 0 1em;
 }
+
 /* copyright */
-.copy{
+.copy {
     text-align: center;
     height: 2em;
     text-transform: uppercase;
+    font-size: 13px;
+    margin-top: 10px;
 }
 
 
 
 /* responsive */
 
-@media (max-width: 960px){
-    .footer-Content{
+@media (max-width: 960px) {
+    .footer-Content {
         flex-direction: column;
         padding: 2em;
     }
-    .firstMenu, .secondMenu, .thirdMenu{
+
+    .firstMenu,
+    .secondMenu,
+    .thirdMenu {
         width: 100%;
         margin: auto;
     }
-    .bk-ground{
+
+    .bk-ground {
         border-right: 0;
         margin-bottom: 2em;
     }
-    .around{
+
+    .around {
         padding: 0;
     }
 }
 
 @media (max-width: 480px) {
-    .newsletter{
+    .newsletter {
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
-        
+
     }
-  
+
 }

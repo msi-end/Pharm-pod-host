@@ -1,5 +1,6 @@
 const databaseCon = require('../models/db.model');
 const sse = require('./sse-API.js')
+// const smsReq= require('./smsApi')
 
 
 //**** */
@@ -42,7 +43,18 @@ exports.apReq = async (req, res) => {
 }
 //To get all doctor avaibility
 exports.getDoc = (req, res) => {
-    let q = `SELECT * from cl_doctor WHERE c_id ='${req.query.user}';`
+    let q = `SELECT doc_id,d_name,status,day,SpecType from cl_doctor WHERE c_id ='${req.query.user}';`
+    databaseCon.query(q, (err, result) => {
+        if (err) throw err;
+        if (result) {
+            res.status(200).send({ data: result, status: true, msg: 'Sucessful' })
+        } else {
+            res.status(403).send({ status: false, msg: 'Something wents wrong !' })
+        }
+    })
+}
+exports.getDocID = (req, res) => {
+    let q = `SELECT d_name,SpecType,qualify,exp,lang,fees,Ln_spec,timing,about from cl_doctor WHERE c_id ='${req.query.user}' AND doc_id=${req.params.id};`
     databaseCon.query(q, (err, result) => {
         if (err) throw err;
         if (result) {
@@ -53,7 +65,6 @@ exports.getDoc = (req, res) => {
     })
 }
 exports.setDoc = (req, res) => {
-    console.log(req.body, req.query)
     let q = `UPDATE cl_doctor SET status='${req.body.status}' ,day='${req.body.date}' WHERE c_id ='${req.query.user}' AND doc_id='${req.body.Docid}'`
     databaseCon.query(q, (err, result) => {
         if (err) throw err;
@@ -64,19 +75,31 @@ exports.setDoc = (req, res) => {
         }
     })
 }
+exports.UpdDoc = (req, res) => {
+    let data = [req.body.name, req.body.SpecType, req.body.qualify, req.body.exp, req.body.lang, req.body.fees, req.body.Ln_spec, JSON.stringify(req.body.timing), req.body.about]
+    let q = `UPDATE cl_doctor SET d_name=?,SpecType=?,qualify=?,exp=?,lang=?,fees=?,Ln_spec=?,timing=?,about=? WHERE c_id ='${req.query.user}' AND doc_id='${req.params.id}'`
+    databaseCon.query(q, data, (err, result) => {
+        if (err) throw err;
+        if (result) {
+            res.status(200).send({ status: true, msg: 'Sucessful Updated' })
+        } else {
+            res.status(403).send({ status: false, msg: 'Something wents wrong !' })
+        }
+    })
+}
 
 
 // create Appointment/patient
 exports.create = (req, res) => {
-let user=req.query.user;
+    let user = req.query.user;
     let params = [req.body.name, req.body.number, req.body.OthInfo, req.body.doctor, req.body.date];
     let sql = `INSERT INTO ${user}_PS_data (p_name,p_number,p_OthInfo,p_doctor,p_aptDate) VALUES (?) `;
     databaseCon.query(sql, [params], function (err, results) {
         if (err) throw err;
-        if(results){
-           let data ={id:results.insertId,name:req.body.name,number:req.body.number,otherInfo:req.body.OthInfo,doc:req.body.doctor,date:req.body.date}
-                    sse.sendSSE( data,user );
-        res.status(201).send({ status: true, msg: 'Patient Created Sucessfully!' })
+        if (results) {
+            let data = { id: results.insertId, name: req.body.name, number: req.body.number, otherInfo: req.body.OthInfo, doc: req.body.doctor, date: req.body.date }
+            sse.sendSSE(data, user);
+            res.status(201).send({ status: true, msg: 'Patient Created Sucessfully!' })
         }
     })
 
@@ -120,7 +143,7 @@ exports.update = (req, res) => {
             });
     }
     else if (req.query && req.body) {
-    console.log(req.query, req.body)
+        console.log(req.query, req.body)
         let obj = { maxAp: 'maxApply', autoAp: 'autoReqAppl', fState: 'form_Status' }
         if (Object.keys(req.body) in obj) {
             let sql = `UPDATE client_Info SET ${obj[(Object.keys(req.body))]}='${Object.values(req.body)[0]}' WHERE c_id='${req.query.user}' `;
@@ -149,12 +172,15 @@ exports.updateApvl = (req, res) => {
         Acpt: `UPDATE ${req.query.user}_PS_data SET p_aptStatus=? WHERE id='${req.body.Acpt}'`,
         Rejt: `INSERT INTO SU_Rej_PSData(p_name, p_OthInfo, p_doctor,p_aptDate,p_number,c_id)  SELECT p_name, p_OthInfo, p_doctor,p_aptDate,p_number,'${req.query.user}' FROM ${req.query.user}_PS_data WHERE id ='${req.body.Rejt}';DELETE FROM ${req.query.user}_PS_data WHERE id='${req.body.Rejt}'`
     }
-    console.log(Object.keys(req.body) in obj)
     if (Object.keys(req.body) in obj) {
-        console.log(obj[Object.keys(req.query)]);
         databaseCon.query(obj[Object.keys(req.body)], ['true'], (err, results) => {
-            if (err) { res.status(400).send({ status: 'false', msg: 'Setting Updated Unsucessful!' }) } else {
+            if (err) throw error;
+            if (results.length > 0 && Object.keys(req.body) == 'Acpt') {
                 res.status(200).send({ status: 'true', msg: 'Setting Updated Sucessfully! , Refresh the Page' })
+                // smsReq.smsAPI(req.body.userNumber,req.body.userName,'reqApv')
+            } else {
+                res.status(400).send({ status: 'false', msg: 'Setting Updated Unsucessful!' })
+                // smsReq.smsAPI(req.body.userNumber,'','reqRej')
             }
         })
     }

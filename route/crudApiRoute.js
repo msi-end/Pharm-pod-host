@@ -1,16 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const crudModel = require('../controllers/crud-API.js')
+const uploadModel = require('../controllers/upload-API.js')
 
 
 
 
-router.get('/getAll',crudModel.getAll)
+router.get('/getAll',crudModel.getAll);
 //To get all apply Req data
-router.get('/apReq',crudModel.apReq)
+router.get('/apReq',crudModel.apReq);
 //To get doctor details 
-router.get('/getDoc',crudModel.getDoc)
-router.post('/setDoc',crudModel.setDoc)
+router.get('/getDoc',crudModel.getDoc);
+router.get('/getDocID/:id',crudModel.getDocID);
+router.post('/setDoc',crudModel.setDoc);
+//update doctor information by ID
+router.put('/UpdDoc/:id',crudModel.UpdDoc);
 
 
 //To Create or Add by Patient
@@ -29,5 +33,8 @@ router.delete('/del', crudModel.delete);
 // //To Reject and  Delect request patient reqs
 router.put('/updApvl', crudModel.updateApvl);
 router.delete('/updApvl', crudModel.updateApvl);
+
+// /// IMAGEpload Route 
+router.post('/setFile',uploadModel.singlefile, uploadModel.setFile)
 
 module.exports = router;
