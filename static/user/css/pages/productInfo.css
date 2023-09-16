@@ -1,0 +1,87 @@
+.productBox{
+    margin-top: 6rem;
+}
+button{
+    cursor: pointer;
+}
+.productBox :is(h1,.small-title){
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+.pro-image{
+    overflow: hidden;
+    padding: 0;
+    margin-top: 2rem;
+}
+.pro-image iframe{
+    aspect-ratio: 16/9;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px 5px 0 0 ;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.pro-image figcaption{
+    text-align: center;
+    font-size: 12px;
+}
+.pbutton{
+    width: 85%;
+    margin: auto;
+
+}
+.boas{
+    width: 100%;
+    margin: auto;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    color: var(--white);
+    background: var(--wp-color);
+}
+.pbutton .uil{
+    margin-left: 10px;
+    color: var(--white);
+}
+.features{
+    width: 80%;
+    margin: 2rem auto;
+}
+.usage img{
+    width: 500px;
+    /* object-fit: cover; */
+    /* object-position: center; */
+    aspect-ratio: 2/1;
+}
+.flox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.useBox{
+    flex-grow: 1;
+}
+.useBox p{
+    font-size: 14px;
+}
+.use{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.use .uil{
+    color: var(--white) !important;
+}
+.smau{
+    font-size: 12px;
+}
+.lar{
+    color: var(--yt-color);
+}
+@media screen and (max-width: 780px) {
+    .usage img{
+        width: 100%;
+    }
+}
